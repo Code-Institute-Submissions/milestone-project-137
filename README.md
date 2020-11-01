@@ -39,3 +39,10 @@ _Player:_
 - Users can keep track of their score by watching the timer, turn count and points while they're playing the game, and see their best scores in best score section in the game.
 6. As a player, I want a fun game that will attract my kids to play and help with their memory skills.
 - Game has a Lego theme so the kids will love to play. It also has difficulty levels so will suit all ages.
+
+_Developer:_
+1. As a developer, I want to create memory game using JavaScript.
+- JavaScript is the main language that was used to create the game.
+2. As a developer, I want to create fully responsive app to showcase my skills to a potential employer.
+- Application is fully responsive thanks to bootstrap framework and mobile first design approach.
+3. As a developer, I wanted to create a game as gaming has been my primary hobby since being a child.
