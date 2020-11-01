@@ -24,3 +24,18 @@ This project uses HTML5, CSS3 and Vanilla JavaScript to make the individual feat
 <p id="ux"></p>
 
 ## 2️⃣ User Experience Design 🧠
+
+### User stories:
+_Player:_
+1. As a player, I want to play a game that involves using my memory so that I can improve my memory skills.
+- The main purpose of the game is to improve memory skills, player can play the game in the play section.
+2. As a player, I want to know how playing memory games can improve memory skills.
+- Information about the benefits of playing memory games can be found in the about section.
+3. As a player, I want a mobile friendly game to play whilst on the go via my mobile phone/tablet.
+- Application is fully responsive thanks to bootstrap framework and mobile first design approach.
+4. As a player, I want a game that is intuitive and easy to use so that I can learn how to use it quickly.
+- The game is very intuitive to use. As addition player can find how to play info in about section.
+5. As a player, I want to see my score so that I can see if I am making progress.
+- Users can keep track of their score by watching the timer, turn count and points while they're playing the game, and see their best scores in best score section in the game.
+6. As a player, I want a fun game that will attract my kids to play and help with their memory skills.
+- Game has a Lego theme so the kids will love to play. It also has difficulty levels so will suit all ages.
