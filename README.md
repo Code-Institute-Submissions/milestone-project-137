@@ -26,7 +26,7 @@ This project uses HTML5, CSS3 and Vanilla JavaScript to make the individual feat
 ## 2️⃣ User Experience Design 🧠
 
 ### User stories:
-_Player:_
+#### Player:
 1. As a player, I want to play a game that involves using my memory so that I can improve my memory skills.
 - The main purpose of the game is to improve memory skills, player can play the game in the play section.
 2. As a player, I want to know how playing memory games can improve memory skills.
@@ -40,9 +40,19 @@ _Player:_
 6. As a player, I want a fun game that will attract my kids to play and help with their memory skills.
 - Game has a Lego theme so the kids will love to play. It also has difficulty levels so will suit all ages.
 
-_Developer:_
+#### Developer:
 1. As a developer, I want to create memory game using JavaScript.
 - JavaScript is the main language that was used to create the game.
 2. As a developer, I want to create fully responsive app to showcase my skills to a potential employer.
 - Application is fully responsive thanks to bootstrap framework and mobile first design approach.
 3. As a developer, I wanted to create a game as gaming has been my primary hobby since being a child.
+
+### Design:
+#### Colour Scheme:
+- !!!!!!!!!!!!!!!!!!!!!!! What colours?????????????????
+#### Typography:
+- !!!!!!!!!!!!!!!!!!!!!!! What font???????????????????
+#### Content Structure:
+- !!!!!!!!!!!!!!!!!!!!!!! Describe structure??????????????
+#### Images:
+- !!!!!!!!!!!!!!!!!!!!!!! Images role???????????????????
