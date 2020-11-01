@@ -13,9 +13,14 @@ The purpose of the game is to improve memory skills. Players can race against th
 ## Table of contents
 
 - <a href="#project">Project Construction 👷</a>
+- <a href="#ux">User Experience Design 🧠</a>
 
 <p id="project"></p>
 
 ## 1️⃣ Project Construction 👷
 
 This project uses HTML5, CSS3 and Vanilla JavaScript to make the individual features of the game work. The above three programming languages were used in conjunction with the Bootstrap Framework to ensure the project itself is as responsive as possible for use amongst the current everyday screen device sizes such as, Mobile, Tablet and Laptop.
+
+<p id="ux"></p>
+
+## 2️⃣ User Experience Design 🧠
