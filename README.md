@@ -14,12 +14,15 @@ The purpose of the game is to improve memory skills. Players can race against th
 
 - <a href="#project">Project Construction 👷</a>
 - <a href="#ux">User Experience Design 🧠</a>
+- <a href="#tech">Technologies Used 🔨</a>
 
 <p id="project"></p>
 
 ## 1️⃣ Project Construction 👷
 
 This project uses HTML5, CSS3 and Vanilla JavaScript to make the individual features of the game work. The above three programming languages were used in conjunction with the Bootstrap Framework to ensure the project itself is as responsive as possible for use amongst the current everyday screen device sizes such as, Mobile, Tablet and Laptop.
+
+<div align="center"><p style="text-align: center"><a href="#top">Back to top ⬆️</a></p></div>
 
 <p id="ux"></p>
 
@@ -59,3 +62,26 @@ This project uses HTML5, CSS3 and Vanilla JavaScript to make the individual feat
 #### Wireframes:
 - <a href="assets/readmeimages/desktop-wireframes.pdf" target="_blank">Desktop wireframes</a>
 - <a href="assets/readmeimages/mobile-wireframes.pdf" target="_blank">Mobile wireframes</a>
+
+<div align="center"><p style="text-align: center"><a href="#top">Back to top ⬆️</a></p></div>
+
+<p id="tech"></p>
+
+## 3️⃣ Technologies Used 🔨
+
+### Languages Used:
+
+- <a href="https://en.wikipedia.org/wiki/HTML" rel="noopener" target="_blank">HTML</a> - Standard mark-up language for documents designed to be displayed in a web browser.
+- <a href="https://en.wikipedia.org/wiki/CSS" rel="noopener" target="_blank">CSS</a> - Describes how HTML elements are to be displayed on screen, paper, or in other media.
+- <a href="https://en.wikipedia.org/wiki/JavaScript" rel="noopener" target="_blank">JavaScript</a> - Is a programming language that conforms to the ECMAScript specification.
+
+### Frameworks, Libraries & Programs Used:
+
+- <a href="https://getbootstrap.com/" rel="noopener" target="_blank">Bootstrap</a> - Potent front-end framework used to create modern websites and web apps.
+- <a href="https://jquery.com/" rel="noopener" target="_blank">jQuery</a> - Fast, small, and feature-rich JavaScript library.
+- <a href="https://code.visualstudio.com/" rel="noopener" target="_blank">Visual Studio Code</a> - Free source-code editor made by Microsoft for Windows, Linux and macOS.
+- <a href="https://git-scm.com/" rel="noopener" target="_blank">Git</a> - Free and open source distributed version control system.
+- <a href="https://github.com/" rel="noopener" target="_blank">GitHub</a> - A Git repository hosting service.
+- <a href="https://fontawesome.com/" rel="noopener" target="_blank">Font Awesome</a> - A web font containing all the icons from the Twitter Bootstrap framework, and now many more.
+- <a href="https://fonts.google.com/" rel="noopener" target="_blank">Google Fonts</a> - A library of 999 free licensed font families.
+- <a href="balsamiq.com" rel="noopener" target="_blank">Balsamiq</a> - Wireframing tool.
