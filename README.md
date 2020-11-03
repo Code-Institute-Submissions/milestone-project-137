@@ -17,6 +17,7 @@ The purpose of the game is to improve memory skills. Players can race against th
 - <a href="#tech">Technologies Used 🔨</a>
 - <a href="#features">Features List 😲</a>
 
+
 <p id="project"></p>
 
 ## 1️⃣ Project Construction 👷
@@ -92,3 +93,9 @@ This project uses HTML5, CSS3 and Vanilla JavaScript to make the individual feat
 <p id="features"></p>
 
 ## 4️⃣ Features List 😲
+
+<div align="center"><p style="text-align: center"><a href="#top">Back to top ⬆️</a></p></div>
+
+<p id="testing"></p>
+
+## 5️⃣ Testing 🔥
