@@ -99,3 +99,11 @@ This project uses HTML5, CSS3 and Vanilla JavaScript to make the individual feat
 <p id="testing"></p>
 
 ## 5️⃣ Testing 🔥
+
+<div align="center"><p style="text-align: center"><a href="#top">Back to top ⬆️</a></p></div>
+
+<p id="deployment"></p>
+
+## 6️⃣ Deployment 🚀
+
+This project was developed in Visual Studio Code editor. All developments were pushed to the corresponding repository in GitHub account.
