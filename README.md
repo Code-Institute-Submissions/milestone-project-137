@@ -15,6 +15,7 @@ The purpose of the game is to improve memory skills. Players can race against th
 - <a href="#project">Project Construction 👷</a>
 - <a href="#ux">User Experience Design 🧠</a>
 - <a href="#tech">Technologies Used 🔨</a>
+- <a href="#features">Features List 😲</a>
 
 <p id="project"></p>
 
@@ -85,3 +86,9 @@ This project uses HTML5, CSS3 and Vanilla JavaScript to make the individual feat
 - <a href="https://fontawesome.com/" rel="noopener" target="_blank">Font Awesome</a> - A web font containing all the icons from the Twitter Bootstrap framework, and now many more.
 - <a href="https://fonts.google.com/" rel="noopener" target="_blank">Google Fonts</a> - A library of 999 free licensed font families.
 - <a href="balsamiq.com" rel="noopener" target="_blank">Balsamiq</a> - Wireframing tool.
+
+<div align="center"><p style="text-align: center"><a href="#top">Back to top ⬆️</a></p></div>
+
+<p id="features"></p>
+
+## 4️⃣ Features List 😲
