@@ -56,3 +56,6 @@ This project uses HTML5, CSS3 and Vanilla JavaScript to make the individual feat
 - !!!!!!!!!!!!!!!!!!!!!!! Describe structure??????????????
 #### Images:
 - !!!!!!!!!!!!!!!!!!!!!!! Images role???????????????????
+#### Wireframes:
+- <a href="assets/readmeimages/desktop-wireframes.pdf" target="_blank">Desktop wireframes</a>
+- <a href="assets/readmeimages/mobile-wireframes.pdf" target="_blank">Mobile wireframes</a>
