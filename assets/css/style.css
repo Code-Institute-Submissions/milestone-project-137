@@ -3,3 +3,14 @@ body {
     padding: 0;
     background-color: rgb(41, 41, 41);
 }
+/* ------------------- Main menu section ------------------- */
+
+#main-menu {
+    color: white;
+    background-color: chartreuse;
+}
+
+
+.btn-block {
+    width: 65%;
+}
