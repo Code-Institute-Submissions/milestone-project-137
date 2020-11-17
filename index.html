@@ -27,7 +27,8 @@
                             </div>
                         </div>
                         <div class="options">
-                            <button type="button" class="btn-block mx-auto p-4 mt-3 mb-3" id="play">Play</button>
+                            <button type="button" class="btn-block mx-auto p-4 mt-3 mb-3" id="play" data-toggle="modal"
+                                data-target="#level-modal">Play</button>
                             <button type="button" class="btn-block mx-auto p-1" id="about">About</button>
                             <button type="button" class="btn-block mx-auto p-1" id="highscores">Highscores</button>
                             <button type="button" class="btn-block mx-auto p-1" id="credits">Credits</button>
@@ -58,16 +59,20 @@
         aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel">Select difficulty:</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
                 <div class="modal-body mx-auto">
-                    <div class="float-md-left level" id="easy">Easy</div>
-                    <div class="float-md-left level" id="medium">Medium</div>
-                    <div class="float-md-left level" id="hard">Hard</div>
+                    <h2>Select difficulty:</h2>
+                    <button type="button" class="shadow level" id="easy">
+                        <h3>Easy</h3>
+                        <p>8 cards</p>
+                    </button>
+                    <button type="button" class="shadow level" id="medium">
+                        <h3>Medium</h3>
+                        <p>12 cards</p>
+                    </button>
+                    <button type="button" class="shadow level" id="hard">
+                        <h3>Hard</h3>
+                        <p>16 cards</p>
+                    </button>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
