@@ -98,7 +98,16 @@ h1 {
 
 /* ------------------- About modal ------------------- */
 
-
 #benefits {
     background-color: rgb(67, 176, 42);
+}
+
+/* ------------------- Game arena section ------------------- */
+
+#game-arena-section {
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
 }
