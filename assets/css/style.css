@@ -53,7 +53,7 @@ h1 {
 .btn-block:hover {
     color: #000;
     text-shadow: white -1px 0px, white 0px 1px, white 1px 0px, white 0px -1px;
-    border: 2px solid #fff;
+    border: 2px solid white;
 }
 
 #play {
@@ -68,16 +68,16 @@ h1 {
     height: 125px;
     margin: 10px;
     color: white;
+    border: 2px solid black;
 }
 
 .level:hover {
     color: #000;
-    border-color: white;
-    
+    border: 2px solid white;
 }
 
 #easy {
-    background-color: rgb(227, 0, 11);
+    background-color: rgb(255, 213, 0);
 }
 
 #medium {
@@ -85,7 +85,7 @@ h1 {
 }
 
 #hard {
-    background-color: rgb(0, 138, 219);
+    background-color: rgb(227, 0, 11);
 }
 
 /* ------------------- About modal ------------------- */
