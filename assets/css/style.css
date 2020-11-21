@@ -130,7 +130,7 @@ h1 {
 .card {
     width: 23%;
     height: 115px;
-    margin-left: 3px;
+    margin-left: 2px;
     margin-right: 3px;
     border: 3px solid  white;
     background-color: rgb(67, 176, 42);
@@ -140,4 +140,15 @@ h1 {
 
 .card:hover {
     border: 3px solid rgb(255, 213, 0);
+}
+
+.cardA {
+    width: 23%;
+    height: 115px;
+    margin-left: 2px;
+    margin-right: 3px;
+    border: 3px solid  rgb(255, 213, 0);
+    cursor: default;
+    pointer-events: none;
+    display: inline-block;
 }
