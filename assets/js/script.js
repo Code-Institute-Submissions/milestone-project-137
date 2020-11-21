@@ -37,7 +37,17 @@ window.onload = level;
 function level() {
     let cards = "";
     for (i = 0; i <= 7; i++) {
-        cards = `${cards}<div class="card" id="c${i}"></div>`
+        cards = `${cards}<div class="card" onclick="reverse(${i})" id="c${i}"></div>`
     }
     board_div.innerHTML = cards;
-}
+};
+
+// Add figure on the other side of card
+function reverse(no) {
+    let element = `c${no}`
+    let picture = `url(assets/images/${figures[no]})`
+    document.getElementById(element).style.background = picture
+    document.getElementById(element).style.backgroundSize = "cover";
+    document.getElementById(element).classList.add("cardA");
+    document.getElementById(element).classList.remove("card");
+};
