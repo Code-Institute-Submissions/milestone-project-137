@@ -30,3 +30,14 @@ let points_p = document.getElementById("points");
 let level_p = document.getElementById("level");
 let time_p = document.getElementById("time");
 let counter_p = document.getElementById("counter");
+
+// Create cards in game arena
+window.onload = level;
+
+function level() {
+    let cards = "";
+    for (i = 0; i <= 7; i++) {
+        cards = `${cards}<div class="card" id="c${i}"></div>`
+    }
+    board_div.innerHTML = cards;
+}
