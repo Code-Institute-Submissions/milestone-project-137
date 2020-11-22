@@ -61,9 +61,9 @@ function reverse(no) {
         firstCardNo = no;
     } else {
         if (figures[firstCardNo] === figures[no]) {
-            function keep2Cards(firstCardNo, no);
+            keep2Cards();
         } else {
-            alert("no!");
+            restore2Cards(firstCardNo, no);
         }
 
         turnCounter++;
@@ -72,6 +72,17 @@ function reverse(no) {
     }
 };
 
-function keep2Cards(firstCardNo, no) {
-    
+function keep2Cards() {
+    alert("same!");
+};
+
+function restore2Cards(firstCardNo, no) {
+    let element1 = `c${firstCardNo}`;
+    let element2 = `c${no}`;
+    document.getElementById(element1).style.background = "rgb(67, 176, 42)";
+    document.getElementById(element1).classList.add("card");
+    document.getElementById(element1).classList.remove("cardA");
+    document.getElementById(element2).style.background = "rgb(67, 176, 42)";
+    document.getElementById(element2).classList.add("card");
+    document.getElementById(element2).classList.remove("cardA");
 }
