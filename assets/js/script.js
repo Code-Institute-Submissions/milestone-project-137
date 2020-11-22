@@ -43,6 +43,8 @@ function level() {
 };
 
 // Add figure on the other side of card
+// Check if one or two cards reversed
+let oneVisible = false;
 function reverse(no) {
     let element = `c${no}`
     let picture = `url(assets/images/${figures[no]})`
@@ -50,4 +52,10 @@ function reverse(no) {
     document.getElementById(element).style.backgroundSize = "cover";
     document.getElementById(element).classList.add("cardA");
     document.getElementById(element).classList.remove("card");
+
+    if (oneVisible === false) {
+        oneVisible = true;
+    } else {
+        oneVisible = false;
+    }
 };
