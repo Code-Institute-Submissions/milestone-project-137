@@ -144,3 +144,10 @@ function timer() {
     }
     setTimeout(timer, 1000);
 };
+
+// Score system 
+function scoreSystem() {
+    if (pairs === 0) {
+        points_span.innerHTML = `Points: ${(50*addPoints - 20*subtractPoints) + time}`
+    }
+}
