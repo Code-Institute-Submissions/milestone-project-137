@@ -35,6 +35,8 @@ let counter_span = document.querySelector("#counter span");
 // JS variables
 let turnCounter = 0;
 let time;
+let addPoints = 0;
+let subtractPoints = 0;
 
 window.onload = level;
 
@@ -70,6 +72,7 @@ function shuffle() {
 // Check if one or two cards reversed
 // Check if two cards are the same
 // Add lock to prevent reverse more than 2 cards before check
+// Add scoring system that will add points for cards that match and subtract points for cards that not match
 let oneVisible = false;
 let firstCardNo;
 let lock = false;
@@ -92,15 +95,18 @@ function reverse(no) {
         } else {
             if (figures[firstCardNo] === figures[no]) {
                 keep2Cards();
+                addPoints++;
             } else {
                 setTimeout(function () {
                     restore2Cards(firstCardNo, no);
                 }, 750);
+                subtractPoints++
             };
 
             turnCounter++;
             counter_span.innerHTML = `Turn counter: ${turnCounter}`
             oneVisible = false;
+            points_span.innerHTML = `Points: ${50*addPoints - 20*subtractPoints}`
         };
     };
 };
