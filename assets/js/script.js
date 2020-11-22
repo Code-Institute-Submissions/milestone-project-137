@@ -26,10 +26,10 @@ const mainMenuSection = document.getElementById("main-menu-section");
 
 const gameArenaSection = document.getElementById("game-arena-section");
 const board_div = document.getElementById("board");
-let points_p = document.getElementById("points");
-let level_p = document.getElementById("level");
-let time_p = document.getElementById("time");
-let counter_p = document.getElementById("counter");
+let points_span = document.querySelector("#points span");
+let level_span = document.querySelector("#level span");
+let time_span = document.querySelector("#time span");
+let counter_span = document.querySelector("#counter span");
 
 // Create cards in game arena
 window.onload = level;
@@ -45,7 +45,7 @@ function level() {
 // Add figure on the other side of card
 // Check if one or two cards reversed
 let oneVisible = false;
-turnCounter = 0;
+let turnCounter = 0;
 function reverse(no) {
     let element = `c${no}`
     let picture = `url(assets/images/${figures[no]})`
@@ -58,7 +58,7 @@ function reverse(no) {
         oneVisible = true;
     } else {
         turnCounter++;
-        counter_p.innerText = `Turncounter: ${turnCounter}`
+        counter_span.innerText = `Turn counter: ${turnCounter}`
         oneVisible = false;
     }
 };
