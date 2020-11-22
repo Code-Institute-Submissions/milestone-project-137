@@ -45,6 +45,7 @@ function level() {
 // Add figure on the other side of card
 // Check if one or two cards reversed
 let oneVisible = false;
+turnCounter = 0;
 function reverse(no) {
     let element = `c${no}`
     let picture = `url(assets/images/${figures[no]})`
@@ -56,6 +57,8 @@ function reverse(no) {
     if (oneVisible === false) {
         oneVisible = true;
     } else {
+        turnCounter++;
+        counter_p.innerText = `Turncounter: ${turnCounter}`
         oneVisible = false;
     }
 };
