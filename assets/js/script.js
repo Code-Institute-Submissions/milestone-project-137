@@ -48,34 +48,41 @@ function level() {
 let oneVisible = false;
 let turnCounter = 0;
 let firstCardNo;
+let lock = false;
 function reverse(no) {
-    let element = `c${no}`
-    let picture = `url(assets/images/${figures[no]})`
-    document.getElementById(element).style.background = picture
-    document.getElementById(element).style.backgroundSize = "cover";
-    document.getElementById(element).classList.add("cardA");
-    document.getElementById(element).classList.remove("card");
+    if (lock === false) {
 
-    if (oneVisible === false) {
-        oneVisible = true;
-        firstCardNo = no;
-    } else {
-        if (figures[firstCardNo] === figures[no]) {
-            keep2Cards();
+        lock = true;
+
+        let element = `c${no}`
+        let picture = `url(assets/images/${figures[no]})`
+        document.getElementById(element).style.background = picture
+        document.getElementById(element).style.backgroundSize = "cover";
+        document.getElementById(element).classList.add("cardA");
+        document.getElementById(element).classList.remove("card");
+
+        if (oneVisible === false) {
+            oneVisible = true;
+            firstCardNo = no;
+            lock = false;
         } else {
-            setTimeout(function () {
-                restore2Cards(firstCardNo, no);
-            }, 750);
-        }
+            if (figures[firstCardNo] === figures[no]) {
+                keep2Cards();
+            } else {
+                setTimeout(function () {
+                    restore2Cards(firstCardNo, no);
+                }, 750);
+            }
 
-        turnCounter++;
-        counter_span.innerHTML = `Turn counter: ${turnCounter}`
-        oneVisible = false;
+            turnCounter++;
+            counter_span.innerHTML = `Turn counter: ${turnCounter}`
+            oneVisible = false;
+        }
     }
 };
 
 function keep2Cards() {
-    alert("same!");
+    lock = false;
 };
 
 function restore2Cards(firstCardNo, no) {
@@ -87,4 +94,6 @@ function restore2Cards(firstCardNo, no) {
     document.getElementById(element2).style.background = "rgb(67, 176, 42)";
     document.getElementById(element2).classList.add("card");
     document.getElementById(element2).classList.remove("cardA");
+
+    lock = false;
 }
