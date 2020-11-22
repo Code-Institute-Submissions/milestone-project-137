@@ -45,6 +45,7 @@ function level() {
         cards = `${cards}<div class="card" onclick="reverse(${i})" id="c${i}"></div>`
     }
     board_div.innerHTML = cards;
+    level_span.innerHTML = `Level: Test`
     time = 60;
     shuffle();
     timer();
