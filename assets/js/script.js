@@ -61,7 +61,7 @@ function reverse(no) {
         firstCardNo = no;
     } else {
         if (figures[firstCardNo] === figures[no]) {
-            alert("yes!");
+            function keep2Cards(firstCardNo, no);
         } else {
             alert("no!");
         }
@@ -71,3 +71,7 @@ function reverse(no) {
         oneVisible = false;
     }
 };
+
+function keep2Cards(firstCardNo, no) {
+    
+}
