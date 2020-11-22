@@ -49,6 +49,7 @@ function level() {
     board_div.innerHTML = cards;
     level_span.innerHTML = `Level: Test`
     time = 60;
+    pairs = 4;
     shuffle();
     timer();
     
@@ -107,6 +108,7 @@ function reverse(no) {
             counter_span.innerHTML = `Turn counter: ${turnCounter}`
             oneVisible = false;
             points_span.innerHTML = `Points: ${50*addPoints - 20*subtractPoints}`
+            scoreSystem();
         };
     };
 };
@@ -114,6 +116,7 @@ function reverse(no) {
 // When 2 reversed cards match
 function keep2Cards() {
     lock = false;
+    pairs--;
 };
 
 // When 2 reversed cards do not match
@@ -136,6 +139,8 @@ function timer() {
     time_span.innerHTML = `Time: ${time}`
     if (time === 0) {
         return;
-    };
+    } else if (pairs === 0) {
+        return;
+    }
     setTimeout(timer, 1000);
 };
