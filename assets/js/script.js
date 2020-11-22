@@ -39,12 +39,27 @@ function level() {
     for (i = 0; i <= 7; i++) {
         cards = `${cards}<div class="card" onclick="reverse(${i})" id="c${i}"></div>`
     }
+    shuffle();
     board_div.innerHTML = cards;
+};
+
+function shuffle() {
+    let i,
+        j,
+        temp;
+    for (i = 7 - 1; i > 0; i--) {
+        j = Math.floor(Math.random() * (i + 1));
+        temp = figures[i];
+        figures[i] = figures[j];
+        figures[j] = temp;
+    };
+    return figures;
 };
 
 // Add figure on the other side of card
 // Check if one or two cards reversed
 // Check if two cards are the same
+// Add lock to prevent reverse more than 2 cards before check
 let oneVisible = false;
 let turnCounter = 0;
 let firstCardNo;
@@ -72,13 +87,13 @@ function reverse(no) {
                 setTimeout(function () {
                     restore2Cards(firstCardNo, no);
                 }, 750);
-            }
+            };
 
             turnCounter++;
             counter_span.innerHTML = `Turn counter: ${turnCounter}`
             oneVisible = false;
-        }
-    }
+        };
+    };
 };
 
 function keep2Cards() {
