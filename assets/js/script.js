@@ -1,3 +1,4 @@
+// Array with lego figures
 const figures = [
     "lego1.png",
     "lego1.png",
@@ -43,6 +44,7 @@ function level() {
     board_div.innerHTML = cards;
 };
 
+// Shuffle cards before game starts
 function shuffle() {
     let i,
         j,
@@ -96,10 +98,12 @@ function reverse(no) {
     };
 };
 
+// When 2 reversed cards match
 function keep2Cards() {
     lock = false;
 };
 
+// When 2 reversed cards do not match
 function restore2Cards(firstCardNo, no) {
     let element1 = `c${firstCardNo}`;
     let element2 = `c${no}`;
