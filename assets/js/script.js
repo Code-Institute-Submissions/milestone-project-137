@@ -124,7 +124,7 @@ function restore2Cards(firstCardNo, no) {
     lock = false;
 }
 
-// Timer
+// Set game timer
 function timer() {
     time--;
     time_span.innerHTML = `Time: ${time}`
