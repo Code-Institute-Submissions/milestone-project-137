@@ -32,16 +32,23 @@ let level_span = document.querySelector("#level span");
 let time_span = document.querySelector("#time span");
 let counter_span = document.querySelector("#counter span");
 
-// Create cards in game arena
+// JS variables
+let turnCounter = 0;
+let time;
+
 window.onload = level;
 
+// Create cards in game arena
 function level() {
     let cards = "";
     for (i = 0; i <= 7; i++) {
         cards = `${cards}<div class="card" onclick="reverse(${i})" id="c${i}"></div>`
     }
-    shuffle();
     board_div.innerHTML = cards;
+    time = 60;
+    shuffle();
+    timer();
+    
 };
 
 // Shuffle cards before game starts
@@ -63,7 +70,6 @@ function shuffle() {
 // Check if two cards are the same
 // Add lock to prevent reverse more than 2 cards before check
 let oneVisible = false;
-let turnCounter = 0;
 let firstCardNo;
 let lock = false;
 function reverse(no) {
@@ -116,3 +122,13 @@ function restore2Cards(firstCardNo, no) {
 
     lock = false;
 }
+
+// Timer
+function timer() {
+    time--;
+    time_span.innerHTML = `Time: ${time}`
+    if (time === 0) {
+        return;
+    };
+    setTimeout(timer, 1000);
+};
