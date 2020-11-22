@@ -44,8 +44,10 @@ function level() {
 
 // Add figure on the other side of card
 // Check if one or two cards reversed
+// Check if two cards are the same
 let oneVisible = false;
 let turnCounter = 0;
+let firstCardNo;
 function reverse(no) {
     let element = `c${no}`
     let picture = `url(assets/images/${figures[no]})`
@@ -56,9 +58,16 @@ function reverse(no) {
 
     if (oneVisible === false) {
         oneVisible = true;
+        firstCardNo = no;
     } else {
+        if (figures[firstCardNo] === figures[no]) {
+            alert("yes!");
+        } else {
+            alert("no!");
+        }
+
         turnCounter++;
-        counter_span.innerText = `Turn counter: ${turnCounter}`
+        counter_span.innerHTML = `Turn counter: ${turnCounter}`
         oneVisible = false;
     }
 };
