@@ -63,7 +63,9 @@ function reverse(no) {
         if (figures[firstCardNo] === figures[no]) {
             keep2Cards();
         } else {
-            restore2Cards(firstCardNo, no);
+            setTimeout(function () {
+                restore2Cards(firstCardNo, no);
+            }, 750);
         }
 
         turnCounter++;
