@@ -19,13 +19,15 @@ const figures = [
 ]
 
 // ----------------------- Global variables
-
+// Game level modal
 const easy_button = document.getElementById("easy");
 const medium_button = document.getElementById("medium");
 const hard_button = document.getElementById("hard");
 
+// Main menu section
 const mainMenuSection = document.getElementById("main-menu-section");
 
+// Game arena section
 const gameArenaSection = document.getElementById("game-arena-section");
 const board_div = document.getElementById("board");
 let points_span = document.querySelector("#points span");
@@ -40,7 +42,7 @@ const mistakesPenalties_p = document.getElementById("mistakes-penalties")
 const timeBonus_p = document.getElementById("time-bonus");
 const totalScore_p = document.getElementById("total-score");
 
-// JS variables
+// ----------------------- JS variables
 let turnCounter = 0;
 let time;
 let addPoints = 0;
