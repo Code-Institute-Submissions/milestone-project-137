@@ -32,6 +32,12 @@ let level_span = document.querySelector("#level span");
 let time_span = document.querySelector("#time span");
 let counter_span = document.querySelector("#counter span");
 
+const gameLevel_p = document.getElementById("game-level");
+const pointsScored_p = document.getElementById("points-scored");
+const mistakesPenalties_p = document.getElementById("mistakes-penalties")
+const timeBonus_p = document.getElementById("time-bonus");
+const totalScore_p = document.getElementById("total-score")
+
 // JS variables
 let turnCounter = 0;
 let time;
@@ -52,7 +58,7 @@ function level() {
     pairs = 4;
     shuffle();
     timer();
-    
+
 };
 
 // Shuffle cards before game starts
@@ -107,7 +113,6 @@ function reverse(no) {
             turnCounter++;
             counter_span.innerHTML = `Turn counter: ${turnCounter}`
             oneVisible = false;
-            points_span.innerHTML = `Points: ${50*addPoints - 20*subtractPoints}`
             scoreSystem();
         };
     };
@@ -117,6 +122,9 @@ function reverse(no) {
 function keep2Cards() {
     lock = false;
     pairs--;
+    if (pairs === 0) {
+        $('#game-win-modal').modal('show');
+    }
 };
 
 // When 2 reversed cards do not match
@@ -147,7 +155,8 @@ function timer() {
 
 // Score system 
 function scoreSystem() {
+    points_span.innerHTML = `Points: ${50 * addPoints - 20 * subtractPoints}`
     if (pairs === 0) {
-        points_span.innerHTML = `Points: ${(50*addPoints - 20*subtractPoints) + time}`
+        points_span.innerHTML = `Points: ${(50 * addPoints - 20 * subtractPoints) + time}`
     }
 }
