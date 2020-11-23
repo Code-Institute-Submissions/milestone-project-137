@@ -18,7 +18,8 @@ const figures = [
     "lego8.png"
 ]
 
-// Global variables
+// ----------------------- Global variables
+
 const easy_button = document.getElementById("easy");
 const medium_button = document.getElementById("medium");
 const hard_button = document.getElementById("hard");
@@ -32,11 +33,12 @@ let level_span = document.querySelector("#level span");
 let time_span = document.querySelector("#time span");
 let counter_span = document.querySelector("#counter span");
 
+// Game win modal
 const gameLevel_p = document.getElementById("game-level");
 const pointsScored_p = document.getElementById("points-scored");
 const mistakesPenalties_p = document.getElementById("mistakes-penalties")
 const timeBonus_p = document.getElementById("time-bonus");
-const totalScore_p = document.getElementById("total-score")
+const totalScore_p = document.getElementById("total-score");
 
 // JS variables
 let turnCounter = 0;
@@ -119,6 +121,7 @@ function reverse(no) {
 };
 
 // When 2 reversed cards match
+// Show game win modal when all pairs match
 function keep2Cards() {
     lock = false;
     pairs--;
