@@ -210,28 +210,36 @@
         aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-                <div class="modal-body mx-auto">
+                <div class="modal-body">
                     <h2>Congratulations!</h2>
-                    <div class="row">
-                        <div class="col-6">
-                            <p>Game level:</p>
-                            <p>points scored:</p>
-                            <p>Mistake penalties:</p>
-                            <p>Time bonus:</p>
-                            <p><strong>Total score:</strong></p>
-                        </div>
-                        <div class="col-6">
-                            <p id="game-level"></p>
-                            <p id="points-scored"></p>
-                            <p id="mistakes-penealties"></p>
-                            <p id="time-bonus"></p>
-                            <p id="total-score"></p>
-                        </div>
-                        <form action="" class="mb-2">
-                            <label for="playerName">Please enter your name:</label><br>
-                            <input type="text" id="playerName" name="playerName">
-                        </form>
-                    </div>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>Game level:</td>
+                                <td id="game-level" class="pl-5"></td>
+                            </tr>
+                            <tr>
+                                <td>Points scored:</td>
+                                <td id="points-scored" class="pl-5"></td>
+                            </tr>
+                            <tr>
+                                <td>Mistake penalties:</td>
+                                <td id="mistakes-penalties" class="pl-5"></td>
+                            </tr>
+                            <tr>
+                                <td>Time bonus:</td>
+                                <td id="time-bonus" class="pl-5"></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Total score:</strong></td>
+                                <td id="total-score" class="pl-5"><strong></strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <form action="" class="mb-2 mt-3">
+                        <label for="playerName">Please enter your name:</label><br>
+                        <input type="text" id="playerName" name="playerName">
+                    </form>
                     <div class="modal-footer text-center">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">OK</button>
                     </div>
