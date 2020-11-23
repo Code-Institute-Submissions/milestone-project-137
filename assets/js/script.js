@@ -41,6 +41,8 @@ const pointsScored_td = document.getElementById("points-scored");
 const mistakesPenalties_td = document.getElementById("mistakes-penalties")
 const timeBonus_td = document.getElementById("time-bonus");
 const totalScore_strong = document.querySelector("#total-score strong");
+let playerName_input = document.getElementById("playerName");
+const save_button = document.getElementById("save-score");
 
 // ----------------------- JS variables
 let turnCounter = 0;
@@ -123,7 +125,6 @@ function reverse(no) {
 };
 
 // When 2 reversed cards match
-// Show game win modal when all pairs match
 function keep2Cards() {
     lock = false;
     pairs--;
@@ -155,7 +156,8 @@ function timer() {
     setTimeout(timer, 1000);
 };
 
-// Score system 
+// Score system
+// Show game win modal when all pairs match
 function scoreSystem() {
     points_span.innerHTML = `Points: ${50 * addPoints - 20 * subtractPoints}`
     if (pairs === 0) {
