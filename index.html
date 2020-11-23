@@ -106,12 +106,13 @@
                     </ul>
                     </p>
                     <div class="p-2" id="benefits">
-                    <h2>Benefits of playing memory games:</h2>
-                    <p class="m-0">Playing memory games can improve short-term memory as well as long-term memory. Memory games
-                        exercise the brain’s memory function. The key is to remember to play them regularly.
-                        Some benefits of memory games are preventing memory-related illnesses
-                        and enhancing other brain functions.</p>
-                </div>
+                        <h2>Benefits of playing memory games:</h2>
+                        <p class="m-0">Playing memory games can improve short-term memory as well as long-term memory.
+                            Memory games
+                            exercise the brain’s memory function. The key is to remember to play them regularly.
+                            Some benefits of memory games are preventing memory-related illnesses
+                            and enhancing other brain functions.</p>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -185,7 +186,7 @@
                     <p>Late Night Productions Studio</p>
                     <p>Director/Designer/Coder: Kamil Zok</p>
                     <h2>Special thanks:</h2>
-                    
+
                     <h2>Contact:</h2>
                     <p>If you find bugs or have any questions please contact me:</p>
                     <form id="contact-form">
@@ -200,6 +201,40 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Game win modal-->
+    <div class="modal fade" id="game-win-modal" data-backdrop="static" data-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body mx-auto">
+                    <h2>Congratulations!</h2>
+                    <div class="row">
+                        <div class="col-6">
+                            <p>Game level:</p>
+                            <p>points scored:</p>
+                            <p>Mistake penalties:</p>
+                            <p>Time bonus:</p>
+                            <p><strong>Total score:</strong></p>
+                        </div>
+                        <div class="col-6">
+                            <p id="game-level"></p>
+                            <p id="points-scored"></p>
+                            <p id="mistakes-penealties"></p>
+                            <p id="time-bonus"></p>
+                            <p id="total-score"></p>
+                        </div>
+                        <form action="" class="mb-2">
+                            <label for="playerName">Please enter your name:</label><br>
+                            <input type="text" id="playerName" name="playerName">
+                        </form>
+                    </div>
+                    <div class="modal-footer text-center">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">OK</button>
+                    </div>
                 </div>
             </div>
         </div>
