@@ -36,11 +36,11 @@ let time_span = document.querySelector("#time span");
 let counter_span = document.querySelector("#counter span");
 
 // Game win modal
-const gameLevel_p = document.getElementById("game-level");
-const pointsScored_p = document.getElementById("points-scored");
-const mistakesPenalties_p = document.getElementById("mistakes-penalties")
-const timeBonus_p = document.getElementById("time-bonus");
-const totalScore_p = document.getElementById("total-score");
+const gameLevel_td = document.getElementById("game-level");
+const pointsScored_td = document.getElementById("points-scored");
+const mistakesPenalties_td = document.getElementById("mistakes-penalties")
+const timeBonus_td = document.getElementById("time-bonus");
+const totalScore_strong = document.querySelector("#total-score strong");
 
 // ----------------------- JS variables
 let turnCounter = 0;
@@ -127,9 +127,6 @@ function reverse(no) {
 function keep2Cards() {
     lock = false;
     pairs--;
-    if (pairs === 0) {
-        $('#game-win-modal').modal('show');
-    }
 };
 
 // When 2 reversed cards do not match
@@ -163,5 +160,12 @@ function scoreSystem() {
     points_span.innerHTML = `Points: ${50 * addPoints - 20 * subtractPoints}`
     if (pairs === 0) {
         points_span.innerHTML = `Points: ${(50 * addPoints - 20 * subtractPoints) + time}`
-    }
-}
+
+        $('#game-win-modal').modal('show');
+        gameLevel_td.innerHTML = "test"
+        pointsScored_td.innerHTML = 50 * addPoints;
+        mistakesPenalties_td.innerHTML = -20 * subtractPoints;
+        timeBonus_td.innerHTML = time;
+        totalScore_strong.innerHTML = (50 * addPoints - 20 * subtractPoints) + time
+    };
+};
