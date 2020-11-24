@@ -21,8 +21,8 @@ const figures = [
 // ----------------------- Global variables
 // Game level modal
 const easy_button = document.getElementById("easy").addEventListener("click", function () { level("easy") });
-const medium_button = document.getElementById("medium");
-const hard_button = document.getElementById("hard");
+const medium_button = document.getElementById("medium").addEventListener("click", function () { level("medium") });
+const hard_button = document.getElementById("hard").addEventListener("click", function () { level("hard") });
 
 // Main menu section
 const mainMenuSection = document.getElementById("main-menu-section");
@@ -61,6 +61,22 @@ function level(userChoice) {
         time = 80;
         pairs = 4;
         shuffle("easy");
+    } else if (userChoice === "medium") {
+        for (i = 0; i <= 11; i++) {
+            cards = `${cards}<div class="card" onclick="reverse(${i})" id="c${i}"></div>`
+        };
+        level_span.innerHTML = `Level: Medium`
+        time = 70;
+        pairs = 6;
+        shuffle("medium");
+    } else if (userChoice === "hard") {
+        for (i = 0; i <= 15; i++) {
+            cards = `${cards}<div class="card" onclick="reverse(${i})" id="c${i}"></div>`
+        };
+        level_span.innerHTML = `Level: Hard`
+        time = 60;
+        pairs = 8;
+        shuffle("medium");
     };
     mainMenuSection.style.display = "none";
     gameArenaSection.style.display = "flex";
@@ -73,13 +89,14 @@ function shuffle(userChoice) {
     let i,
         j,
         temp;
-        if (userChoice === "easy") {
-    for (i = 7 - 1; i > 0; i--) {
-        j = Math.floor(Math.random() * (i + 1));
-        temp = figures[i];
-        figures[i] = figures[j];
-        figures[j] = temp;
-    }}
+    if (userChoice === "easy") {
+        for (i = 7 - 1; i > 0; i--) {
+            j = Math.floor(Math.random() * (i + 1));
+            temp = figures[i];
+            figures[i] = figures[j];
+            figures[j] = temp;
+        }
+    }
     return figures;
 };
 
