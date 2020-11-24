@@ -95,9 +95,22 @@ function shuffle(userChoice) {
             temp = figures[i];
             figures[i] = figures[j];
             figures[j] = temp;
-        }
-    }
-    return figures;
+        };
+    } else if (userChoice === "medium") {
+        for (i = 11 - 1; i > 0; i--) {
+            j = Math.floor(Math.random() * (i + 1));
+            temp = figures[i];
+            figures[i] = figures[j];
+            figures[j] = temp;
+        };
+    } else if (userChoice === "hard") {
+        for (i = 15 - 1; i > 0; i--) {
+            j = Math.floor(Math.random() * (i + 1));
+            temp = figures[i];
+            figures[i] = figures[j];
+            figures[j] = temp;
+        };
+    } return figures;
 };
 
 // Add figure on the other side of card
