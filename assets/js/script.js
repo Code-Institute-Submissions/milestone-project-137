@@ -20,7 +20,7 @@ const figures = [
 
 // ----------------------- Global variables
 // Game level modal
-const easy_button = document.getElementById("easy");
+const easy_button = document.getElementById("easy").addEventListener("click", function () { level("easy") });
 const medium_button = document.getElementById("medium");
 const hard_button = document.getElementById("hard");
 
@@ -50,22 +50,22 @@ let time;
 let addPoints = 0;
 let subtractPoints = 0;
 
-window.onload = level;
-
 // Create cards in game arena
-function level() {
+function level(userChoice) {
     let cards = "";
-    for (i = 0; i <= 7; i++) {
-        cards = `${cards}<div class="card" onclick="reverse(${i})" id="c${i}"></div>`
-    }
+    if (userChoice === "easy") {
+        for (i = 0; i <= 7; i++) {
+            cards = `${cards}<div class="card" onclick="reverse(${i})" id="c${i}"></div>`
+        };
+        level_span.innerHTML = `Level: Easy`
+        time = 80;
+        pairs = 4;
+        shuffle();
+    };
+    mainMenuSection.style.display = "none";
+    gameArenaSection.style.display = "flex";
     board_div.innerHTML = cards;
-    level_span.innerHTML = `Level: Test`
-    time = 60;
-    pairs = 4;
-    shuffle();
     timer();
-
-    $('#highscores-modal').modal('show');
 };
 
 // Shuffle cards before game starts
