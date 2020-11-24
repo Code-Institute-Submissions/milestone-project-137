@@ -49,6 +49,7 @@ let turnCounter = 0;
 let time = 60;
 let addPoints = 0;
 let subtractPoints = 0;
+let gameLevel;
 
 // ----------------------- Game start
 function startGame() {
@@ -67,6 +68,7 @@ function level(userChoice) {
         level_span.innerHTML = "Easy"
         pairs = 4;
         shuffle("easy");
+        gameLevel = "easy";
     } else if (userChoice === "medium") {
         for (i = 0; i <= 11; i++) {
             cards = `${cards}<div class="card" onclick="reverse(${i})" id="c${i}"></div>`
@@ -74,13 +76,15 @@ function level(userChoice) {
         level_span.innerHTML = "Medium"
         pairs = 6;
         shuffle("medium");
+        gameLevel = "medium";
     } else if (userChoice === "hard") {
         for (i = 0; i <= 15; i++) {
             cards = `${cards}<div class="card" onclick="reverse(${i})" id="c${i}"></div>`
         };
         level_span.innerHTML = "Hard"
         pairs = 8;
-        shuffle("medium");
+        shuffle("hard");
+        gameLevel = "hard";
     };
     mainMenuSection.style.display = "none";
     gameArenaSection.style.display = "flex";
@@ -197,16 +201,20 @@ function timer() {
 function scoreSystem() {
     points_span.innerHTML = `Points: ${50 * addPoints - 20 * subtractPoints}`
     if (pairs === 0) {
-        points_span.innerHTML = `Points: ${(50 * addPoints - 20 * subtractPoints) + time}`
-
         $('#game-win-modal').modal('show');
         gameLevel_td.innerHTML = level_span.innerHTML
         pointsScored_td.innerHTML = 50 * addPoints;
         mistakesPenalties_td.innerHTML = -20 * subtractPoints;
-        timeBonus_td.innerHTML = time;
-        totalScore_strong.innerHTML = (50 * addPoints - 20 * subtractPoints) + time
+        if (gameLevel === "easy") {
+        timeBonus_td.innerHTML = time
+        } else if (gameLevel === "medium") {
+                timeBonus_td.innerHTML = time * 2
+                } 
+        } else if (gameLevel === "hard") {
+            timeBonus_td.innerHTML = time * 3
+            };
+        totalScore_strong.innerHTML = (50 * addPoints - 20 * subtractPoints) + parseInt(timeBonus_td.innerHTML);
     };
-};
 
 // Save score to local storage
 const printScores_tbody = document.getElementById("print-scores");
