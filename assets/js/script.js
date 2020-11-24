@@ -60,7 +60,7 @@ function level(userChoice) {
         level_span.innerHTML = `Level: Easy`
         time = 80;
         pairs = 4;
-        shuffle();
+        shuffle("easy");
     };
     mainMenuSection.style.display = "none";
     gameArenaSection.style.display = "flex";
@@ -69,16 +69,17 @@ function level(userChoice) {
 };
 
 // Shuffle cards before game starts
-function shuffle() {
+function shuffle(userChoice) {
     let i,
         j,
         temp;
+        if (userChoice === "easy") {
     for (i = 7 - 1; i > 0; i--) {
         j = Math.floor(Math.random() * (i + 1));
         temp = figures[i];
         figures[i] = figures[j];
         figures[j] = temp;
-    };
+    }}
     return figures;
 };
 
