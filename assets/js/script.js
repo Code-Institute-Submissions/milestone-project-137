@@ -185,6 +185,7 @@ save_button.addEventListener("click", function () {
     };
 
     getHighScores.push(score);
+    getHighScores.sort((a, b) => b.score - a.score);
 
     localStorage.setItem("highScores", JSON.stringify(getHighScores))
 });
