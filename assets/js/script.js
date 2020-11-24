@@ -50,7 +50,12 @@ let time = 60;
 let addPoints = 0;
 let subtractPoints = 0;
 
+// ----------------------- Game start
+function startGame() {
+    gameArenaSection.style.display = "none";
+}
 
+window.onload = startGame;
 
 // Create cards in game arena
 function level(userChoice) {
