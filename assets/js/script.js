@@ -174,6 +174,7 @@ function scoreSystem() {
 };
 
 // Save score to local storage
+const printScores_tbody = document.getElementById("print-scores");
 const getHighScores = JSON.parse(localStorage.getItem("highScores")) || [];
 
 save_button.addEventListener("click", function () {
@@ -184,8 +185,16 @@ save_button.addEventListener("click", function () {
     };
 
     getHighScores.push(score);
-    
+
     localStorage.setItem("highScores", JSON.stringify(getHighScores))
 });
 
+printScores_tbody.innerHTML = getHighScores
+    .map(score => {
+        return `<tr>
+        <td>${score.name}</td>
+        <td>${score.score}</td>
+        <td>${score.level}</td>
+        </tr>`;
+    }).join("");
 
