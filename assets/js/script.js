@@ -31,7 +31,7 @@ const mainMenuSection = document.getElementById("main-menu-section");
 const gameArenaSection = document.getElementById("game-arena-section");
 const board_div = document.getElementById("board");
 let points_span = document.querySelector("#points span");
-let level_span = document.querySelector("#level span");
+let level_span = document.querySelector(".lev");
 let time_span = document.querySelector("#time span");
 let counter_span = document.querySelector("#counter span");
 
@@ -46,9 +46,11 @@ const save_button = document.getElementById("save-score");
 
 // ----------------------- JS variables
 let turnCounter = 0;
-let time;
+let time = 60;
 let addPoints = 0;
 let subtractPoints = 0;
+
+
 
 // Create cards in game arena
 function level(userChoice) {
@@ -57,24 +59,21 @@ function level(userChoice) {
         for (i = 0; i <= 7; i++) {
             cards = `${cards}<div class="card" onclick="reverse(${i})" id="c${i}"></div>`
         };
-        level_span.innerHTML = `Level: Easy`
-        time = 80;
+        level_span.innerHTML = "Easy"
         pairs = 4;
         shuffle("easy");
     } else if (userChoice === "medium") {
         for (i = 0; i <= 11; i++) {
             cards = `${cards}<div class="card" onclick="reverse(${i})" id="c${i}"></div>`
         };
-        level_span.innerHTML = `Level: Medium`
-        time = 70;
+        level_span.innerHTML = "Medium"
         pairs = 6;
         shuffle("medium");
     } else if (userChoice === "hard") {
         for (i = 0; i <= 15; i++) {
             cards = `${cards}<div class="card" onclick="reverse(${i})" id="c${i}"></div>`
         };
-        level_span.innerHTML = `Level: Hard`
-        time = 60;
+        level_span.innerHTML = "Hard"
         pairs = 8;
         shuffle("medium");
     };
@@ -196,7 +195,7 @@ function scoreSystem() {
         points_span.innerHTML = `Points: ${(50 * addPoints - 20 * subtractPoints) + time}`
 
         $('#game-win-modal').modal('show');
-        gameLevel_td.innerHTML = "test"
+        gameLevel_td.innerHTML = level_span.innerHTML
         pointsScored_td.innerHTML = 50 * addPoints;
         mistakesPenalties_td.innerHTML = -20 * subtractPoints;
         timeBonus_td.innerHTML = time;
@@ -212,7 +211,7 @@ save_button.addEventListener("click", function () {
     const score = {
         name: playerName_input.value,
         score: totalScore_strong.innerHTML,
-        level: "test",
+        level: level_span.innerHTML,
     };
 
     getHighScores.push(score);
