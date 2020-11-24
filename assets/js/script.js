@@ -44,6 +44,9 @@ const totalScore_strong = document.querySelector("#total-score strong");
 let playerName_input = document.getElementById("playerName");
 const save_button = document.getElementById("save-score");
 
+// Times up modal
+const timesUp_modal = document.getElementById("times-up-modal");
+
 // ----------------------- JS variables
 let turnCounter = 0;
 let time = 60;
@@ -189,6 +192,7 @@ function timer() {
     time--;
     time_span.innerHTML = `Time: ${time}`
     if (time === 0) {
+        $('#times-up-modal').modal('show');
         return;
     } else if (pairs === 0) {
         return;
