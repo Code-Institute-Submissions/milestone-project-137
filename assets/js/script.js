@@ -65,6 +65,7 @@ function level() {
     shuffle();
     timer();
 
+    $('#highscores-modal').modal('show');
 };
 
 // Shuffle cards before game starts
@@ -171,3 +172,20 @@ function scoreSystem() {
         totalScore_strong.innerHTML = (50 * addPoints - 20 * subtractPoints) + time
     };
 };
+
+// Save score to local storage
+const getHighScores = JSON.parse(localStorage.getItem("highScores")) || [];
+
+save_button.addEventListener("click", function () {
+    const score = {
+        name: playerName_input.value,
+        score: totalScore_strong.innerHTML,
+        level: "test",
+    };
+
+    getHighScores.push(score);
+    
+    localStorage.setItem("highScores", JSON.stringify(getHighScores))
+});
+
+
