@@ -100,28 +100,19 @@ function shuffle(userChoice) {
     let i,
         j,
         temp;
+    let cardNum = 14;
     if (userChoice === "easy") {
-        for (i = 7 - 1; i > 0; i--) {
-            j = Math.floor(Math.random() * (i + 1));
-            temp = figures[i];
-            figures[i] = figures[j];
-            figures[j] = temp;
-        };
+        cardNum = 6;
     } else if (userChoice === "medium") {
-        for (i = 11 - 1; i > 0; i--) {
-            j = Math.floor(Math.random() * (i + 1));
-            temp = figures[i];
-            figures[i] = figures[j];
-            figures[j] = temp;
-        };
-    } else if (userChoice === "hard") {
-        for (i = 15 - 1; i > 0; i--) {
-            j = Math.floor(Math.random() * (i + 1));
-            temp = figures[i];
-            figures[i] = figures[j];
-            figures[j] = temp;
-        };
-    } return figures;
+        cardNum = 10;
+    };
+    for (i = cardNum; i > 0; i--) {
+        j = Math.floor(Math.random() * (i + 1));
+        temp = figures[i];
+        figures[i] = figures[j];
+        figures[j] = temp;
+    };
+    return figures;
 };
 
 // Add figure on the other side of card
@@ -210,15 +201,15 @@ function scoreSystem() {
         pointsScored_td.innerHTML = 50 * addPoints;
         mistakesPenalties_td.innerHTML = -20 * subtractPoints;
         if (gameLevel === "easy") {
-        timeBonus_td.innerHTML = time
+            timeBonus_td.innerHTML = time
         } else if (gameLevel === "medium") {
-                timeBonus_td.innerHTML = time * 2
-                } 
-        } else if (gameLevel === "hard") {
-            timeBonus_td.innerHTML = time * 3
-            };
-        totalScore_strong.innerHTML = (50 * addPoints - 20 * subtractPoints) + parseInt(timeBonus_td.innerHTML);
+            timeBonus_td.innerHTML = time * 2
+        }
+    } else if (gameLevel === "hard") {
+        timeBonus_td.innerHTML = time * 3
     };
+    totalScore_strong.innerHTML = (50 * addPoints - 20 * subtractPoints) + parseInt(timeBonus_td.innerHTML);
+};
 
 // Save score to local storage
 const printScores_tbody = document.getElementById("print-scores");
