@@ -39,6 +39,7 @@ h1 {
     color:#000;
     text-shadow: white -1px 0px, white 0px 1px, white 1px 0px, white 0px -1px;
     position: absolute;
+    font-size: 2rem;
 }
 
 h1 li {
@@ -166,3 +167,11 @@ h1 li {
 .table td, .table th {
     padding: 0;
 }
+
+/* ------------------- Media Query ------------------- */
+@media (max-width: 410px) {
+ h1 {
+     font-size: 1.5rem;
+ }
+}
+
