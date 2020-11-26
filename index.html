@@ -17,10 +17,16 @@
     <section id="main-menu-section">
         <div class="opaque-overlay">&nbsp;</div>
         <div class="container">
-            <div class="row text-center">
+            <div class="row">
                 <div class="col-12 offset-md-2 col-md-8 offset-lg-3 col-lg-6">
-                    <div id="main-menu" class="pb-3">
-                        <h1>Lego Memory Game</h1>
+                    <div id="main-menu" class="py-3">
+                        <h1>
+                            <ul>
+                                <li>Emmet's</li>
+                                <li>Memory</li>
+                                <li>Game</li>
+                            </ul>
+                        </h1>
                         <div class="row">
                             <div class="offset-1 col-10">
                                 <div id="emmet"><img src="assets/images/emmet.png" alt="Emmet lego minifigure"></div>
@@ -142,7 +148,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-warning mr-auto" id="clear">Clear scores</button>
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="window.location.reload();"">Close</button>
                 </div>
             </div>
         </div>
