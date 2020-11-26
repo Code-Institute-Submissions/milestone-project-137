@@ -152,3 +152,8 @@ h1 {
     pointer-events: none;
     display: inline-block;
 }
+
+/* ------------------- Highscores modal ------------------- */
+.table td, .table th {
+    padding: 0;
+}
