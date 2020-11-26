@@ -78,7 +78,7 @@
                     </button>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
                 </div>
             </div>
         </div>
@@ -115,7 +115,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
@@ -127,7 +127,7 @@
             <div class="modal-content">
                 <div class="modal-body">
                     <h2>Highscores:</h2>
-                    <table class="table text-center">
+                    <table class="table text-center p-0">
                         <thead>
                             <tr>
                                 <th scope="col">Name</th>
@@ -141,6 +141,7 @@
                     </table>
                 </div>
                 <div class="modal-footer">
+                    <button type="button" class="btn btn-warning mr-auto" id="clear">Clear scores</button>
                     <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                 </div>
             </div>
@@ -170,7 +171,7 @@
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
@@ -211,7 +212,8 @@
                         <input type="text" id="playerName" name="playerName">
                     </form>
                     <div class="modal-footer text-center">
-                        <button type="button" class="btn btn-secondary" id="save-score" data-dismiss="modal">OK</button>
+                        <button type="button" class="btn btn-success" id="save-score" data-dismiss="modal" onclick="window.location.reload();">Save</button>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="window.location.reload();">Close</button>
                     </div>
                 </div>
             </div>
@@ -227,8 +229,8 @@
                     <p>Time's Up!</p>
                     <p>Play this level again?</p>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-danger" id="play-again" data-dismiss="modal">Yes</button>
-                        <button type="button" class="btn btn-secondary" class="reload" data-dismiss="modal" onclick="window.location.reload();">No</button>                    </div>
+                        <button type="button" class="btn btn-success" id="play-again" data-dismiss="modal">Yes</button>
+                        <button type="button" class="btn btn-danger" class="reload" data-dismiss="modal" onclick="window.location.reload();">No</button>                    </div>
                 </div>
             </div>
         </div>
