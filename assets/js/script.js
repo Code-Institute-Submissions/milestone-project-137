@@ -64,31 +64,27 @@ window.onload = startGame;
 // Create cards in game arena
 function level(userChoice) {
     let cards = "";
+    let cardNum = 15;
     if (userChoice === "easy") {
-        for (i = 0; i <= 7; i++) {
-            cards = `${cards}<div class="card" onclick="reverse(${i})" id="c${i}"></div>`
-        };
+        cardNum = 7;
         level_span.innerHTML = "Easy"
         pairs = 4;
         shuffle("easy");
         gameLevel = "easy";
     } else if (userChoice === "medium") {
-        for (i = 0; i <= 11; i++) {
-            cards = `${cards}<div class="card" onclick="reverse(${i})" id="c${i}"></div>`
-        };
+        cardNum = 11;
         level_span.innerHTML = "Medium"
         pairs = 6;
         shuffle("medium");
         gameLevel = "medium";
-    } else if (userChoice === "hard") {
-        for (i = 0; i <= 15; i++) {
-            cards = `${cards}<div class="card" onclick="reverse(${i})" id="c${i}"></div>`
-        };
-        level_span.innerHTML = "Hard"
-        pairs = 8;
-        shuffle("hard");
-        gameLevel = "hard";
     };
+    for (i = 0; i <= cardNum; i++) {
+        cards = `${cards}<div class="card" onclick="reverse(${i})" id="c${i}"></div>`
+    };
+    level_span.innerHTML = "Hard"
+    pairs = 8;
+    shuffle("hard");
+    gameLevel = "hard";
     mainMenuSection.style.display = "none";
     gameArenaSection.style.display = "flex";
     board_div.innerHTML = cards;
@@ -97,9 +93,9 @@ function level(userChoice) {
 
 // Shuffle cards before game starts
 function shuffle(userChoice) {
-    let i,
-        j,
-        temp;
+    let i;
+    let j;
+    let temp;
     let cardNum = 14;
     if (userChoice === "easy") {
         cardNum = 6;
