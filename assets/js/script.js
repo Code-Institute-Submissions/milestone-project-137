@@ -53,7 +53,7 @@ let time = 60;
 let addPoints = 0;
 let subtractPoints = 0;
 let gameLevel;
-
+let pairs;
 // ----------------------- Game start
 function startGame() {
     gameArenaSection.style.display = "none";
@@ -66,40 +66,36 @@ function level(userChoice) {
     let cards = "";
     let cardNum = 15;
     if (userChoice === "easy") {
-        cardNum = 7;
-        level_span.innerHTML = "Easy"
-        pairs = 4;
-        shuffle("easy");
         gameLevel = "easy";
+        cardNum = 7;
+        level_span.innerHTML = gameLevel
+        pairs = 4;
     } else if (userChoice === "medium") {
-        cardNum = 11;
-        level_span.innerHTML = "Medium"
-        pairs = 6;
-        shuffle("medium");
         gameLevel = "medium";
+        cardNum = 11;
+        level_span.innerHTML = gameLevel
+        pairs = 6;
+    } else if (userChoice === "hard") {
+        gameLevel = "hard";
+        level_span.innerHTML = gameLevel
+        pairs = 8;
     };
     for (i = 0; i <= cardNum; i++) {
         cards = `${cards}<div class="card" onclick="reverse(${i})" id="c${i}"></div>`
     };
-    level_span.innerHTML = "Hard"
-    pairs = 8;
-    shuffle("hard");
-    gameLevel = "hard";
     mainMenuSection.style.display = "none";
     gameArenaSection.style.display = "flex";
     board_div.innerHTML = cards;
+    shuffle();
     timer();
 };
 
 // Shuffle cards before game starts
-function shuffle(userChoice) {
-    let i;
-    let j;
-    let temp;
+function shuffle() {
     let cardNum = 14;
-    if (userChoice === "easy") {
+    if (gameLevel === "easy") {
         cardNum = 6;
-    } else if (userChoice === "medium") {
+    } else if (gameLevel === "medium") {
         cardNum = 10;
     };
     for (i = cardNum; i > 0; i--) {
