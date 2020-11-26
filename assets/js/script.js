@@ -42,7 +42,10 @@ const mistakesWinModal = document.getElementById("mistakes-penalties")
 const timeBonusWinModal = document.getElementById("time-bonus");
 const totalScore = document.querySelector("#total-score strong");
 const playerNameInput = document.getElementById("playerName");
-const save_button = document.getElementById("save-score");
+const saveButton = document.getElementById("save-score");
+
+// Highscores modal
+const clearButton = document.getElementById("clear");
 
 // Times up modal
 const timesUpModal = document.getElementById("times-up-modal");
@@ -221,10 +224,13 @@ function playAgain() {
 };
 
 // Save score to local storage
-const printScores_tbody = document.getElementById("print-scores");
+const printScore = document.getElementById("print-scores");
 const getHighScores = JSON.parse(localStorage.getItem("highScores")) || [];
-
-save_button.addEventListener("click", function () {
+clearButton.addEventListener("click", function () {
+    window.localStorage.clear()
+    printScore.style.display = "none"
+});
+saveButton.addEventListener("click", function () {
     const score = {
         name: playerNameInput.value,
         score: totalScore.innerHTML,
@@ -237,7 +243,7 @@ save_button.addEventListener("click", function () {
     localStorage.setItem("highScores", JSON.stringify(getHighScores))
 });
 
-printScores_tbody.innerHTML = getHighScores
+printScore.innerHTML = getHighScores
     .map(score => {
         return `<tr>
         <td>${score.name}</td>
