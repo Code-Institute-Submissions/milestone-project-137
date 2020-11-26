@@ -46,10 +46,12 @@ const save_button = document.getElementById("save-score");
 
 // Times up modal
 const timesUpModal = document.getElementById("times-up-modal");
+const playAgainButton = document.getElementById("play-again").addEventListener('click', function () { playAgain() });
+
 
 // ----------------------- JS variables
 let turnCounter = 0;
-let time = 60;
+let time = 20;
 let addPoints = 0;
 let subtractPoints = 0;
 let gameLevel;
@@ -86,6 +88,7 @@ function level(userChoice) {
     mainMenuSection.style.display = "none";
     gameArenaSection.style.display = "flex";
     boardArena.innerHTML = cards;
+    counterArena.innerHTML = turnCounter;
     shuffle();
     timer();
     scoreSystem();
@@ -143,7 +146,7 @@ function reverse(no) {
                 subtractPoints++
             };
             turnCounter++;
-            counterArena.innerHTML = turnCounter
+            counterArena.innerHTML = turnCounter;
             oneVisible = false;
             scoreSystem();
         };
@@ -194,11 +197,26 @@ function scoreSystem() {
         mistakesWinModal.innerHTML = -20 * subtractPoints;
         timeBonusWinModal.innerHTML = time;
         if (gameLevel === "medium") {
-            timeBonusWinModal.innerHTML = `${time * 2} (added level bonus: x2)`
+            timeBonusWinModal.innerHTML = `${time * 2} (added time bonus: x2)`
         } else if (gameLevel === "hard") {
-            timeBonusWinModal.innerHTML = `${time * 3} (added level bonus: x3)`
+            timeBonusWinModal.innerHTML = `${time * 3} (added time bonus: x3)`
         };
         totalScore.innerHTML = (50 * addPoints - 20 * subtractPoints) + parseInt(timeBonusWinModal.innerHTML);
+    };
+};
+
+// Play again when times up
+function playAgain() {
+    turnCounter = 0;
+    time = 20;
+    addPoints = 0;
+    subtractPoints = 0;
+    if (gameLevel === "easy") {
+        level("easy");
+    } else if (gameLevel === "medium") {
+        level("medium");
+    } else if (gameLevel === "hard") {
+        level("hard");
     };
 };
 
