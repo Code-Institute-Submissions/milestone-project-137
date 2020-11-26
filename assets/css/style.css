@@ -38,6 +38,11 @@ body {
 h1 {
     color:#000;
     text-shadow: white -1px 0px, white 0px 1px, white 1px 0px, white 0px -1px;
+    position: absolute;
+}
+
+h1 li {
+    list-style-type: none;
 }
 
 #emmet img {
@@ -48,6 +53,7 @@ h1 {
 #main-menu {
     color: white;
     background-color: rgb(255, 213, 0);
+    position: relative;
 }
 
 .btn-block {
@@ -56,17 +62,20 @@ h1 {
     font-weight: 700;
     font-size: 28px;
     background-color: rgb(0, 138, 219);
-}
-
-.btn-block:hover {
-    color: #000;
-    text-shadow: white -1px 0px, white 0px 1px, white 1px 0px, white 0px -1px;
-    border: 2px solid white;
+    border: 4px solid rgb(0, 138, 219);
 }
 
 #play {
     font-size: 38px;
     background-color: rgb(227, 0, 11);
+    border: 4px solid rgb(227, 0, 11);
+}
+
+#play:hover,
+.btn-block:hover {
+    color: #000;
+    text-shadow: white -1px 0px, white 0px 1px, white 1px 0px, white 0px -1px;
+    border: 4px solid white;
 }
 
 /* ------------------- Game level modal ------------------- */
