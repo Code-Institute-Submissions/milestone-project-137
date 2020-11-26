@@ -46,6 +46,20 @@ h1 li {
     list-style-type: none;
 }
 
+#volume-on {
+    position: absolute;
+    right: 10px;
+    z-index: 1000;
+}
+
+#volume-on i {
+    cursor: pointer;
+}
+
+#volume-on i:hover {
+    color: black;
+}
+
 #emmet img {
     width: 100%;
     height: auto;
