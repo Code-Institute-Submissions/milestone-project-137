@@ -20,32 +20,32 @@ const figures = [
 
 // ----------------------- Global variables
 // Game level modal
-const easy_button = document.getElementById("easy").addEventListener("click", function () { level("easy") });
-const medium_button = document.getElementById("medium").addEventListener("click", function () { level("medium") });
-const hard_button = document.getElementById("hard").addEventListener("click", function () { level("hard") });
+const easyButton = document.getElementById("easy").addEventListener("click", function () { level("easy") });
+const mediumButton = document.getElementById("medium").addEventListener("click", function () { level("medium") });
+const hardButton = document.getElementById("hard").addEventListener("click", function () { level("hard") });
 
 // Main menu section
 const mainMenuSection = document.getElementById("main-menu-section");
 
 // Game arena section
 const gameArenaSection = document.getElementById("game-arena-section");
-const board_div = document.getElementById("board");
-let points_span = document.querySelector("#points span");
-let level_span = document.querySelector(".lev");
-let time_span = document.querySelector("#time span");
-let counter_span = document.querySelector("#counter span");
+const boardArena = document.getElementById("board");
+const pointsArena = document.querySelector("#points span:nth-child(2)");
+const levelArena = document.querySelector("#level span:nth-child(2)");
+const timeArena = document.querySelector("#time span:nth-child(2)");
+const counterArena = document.querySelector("#counter span:nth-child(2)");
 
 // Game win modal
-const gameLevel_td = document.getElementById("game-level");
-const pointsScored_td = document.getElementById("points-scored");
-const mistakesPenalties_td = document.getElementById("mistakes-penalties")
-const timeBonus_td = document.getElementById("time-bonus");
-const totalScore_strong = document.querySelector("#total-score strong");
-let playerName_input = document.getElementById("playerName");
+const levelWinModal = document.getElementById("game-level");
+const pointsWinModal = document.getElementById("points-scored");
+const mistakesWinModal = document.getElementById("mistakes-penalties")
+const timeBonusWinModal = document.getElementById("time-bonus");
+const totalScore = document.querySelector("#total-score strong");
+const playerNameInput = document.getElementById("playerName");
 const save_button = document.getElementById("save-score");
 
 // Times up modal
-const timesUp_modal = document.getElementById("times-up-modal");
+const timesUpModal = document.getElementById("times-up-modal");
 
 // ----------------------- JS variables
 let turnCounter = 0;
@@ -68,16 +68,16 @@ function level(userChoice) {
     if (userChoice === "easy") {
         gameLevel = "easy";
         cardNum = 7;
-        level_span.innerHTML = gameLevel
+        levelArena.innerHTML = gameLevel
         pairs = 4;
     } else if (userChoice === "medium") {
         gameLevel = "medium";
         cardNum = 11;
-        level_span.innerHTML = gameLevel
+        levelArena.innerHTML = gameLevel
         pairs = 6;
     } else if (userChoice === "hard") {
         gameLevel = "hard";
-        level_span.innerHTML = gameLevel
+        levelArena.innerHTML = gameLevel
         pairs = 8;
     };
     for (i = 0; i <= cardNum; i++) {
@@ -85,9 +85,10 @@ function level(userChoice) {
     };
     mainMenuSection.style.display = "none";
     gameArenaSection.style.display = "flex";
-    board_div.innerHTML = cards;
+    boardArena.innerHTML = cards;
     shuffle();
     timer();
+    scoreSystem();
 };
 
 // Shuffle cards before game starts
@@ -141,9 +142,8 @@ function reverse(no) {
                 }, 750);
                 subtractPoints++
             };
-
             turnCounter++;
-            counter_span.innerHTML = `Turn counter: ${turnCounter}`
+            counterArena.innerHTML = turnCounter
             oneVisible = false;
             scoreSystem();
         };
@@ -173,7 +173,7 @@ function restore2Cards(firstCardNo, no) {
 // Set game timer
 function timer() {
     time--;
-    time_span.innerHTML = `Time: ${time}`
+    timeArena.innerHTML = time
     if (time === 0) {
         $('#times-up-modal').modal('show');
         return;
@@ -186,21 +186,20 @@ function timer() {
 // Score system
 // Show game win modal when all pairs match
 function scoreSystem() {
-    points_span.innerHTML = `Points: ${50 * addPoints - 20 * subtractPoints}`
+    pointsArena.innerHTML = 50 * addPoints - 20 * subtractPoints
     if (pairs === 0) {
         $('#game-win-modal').modal('show');
-        gameLevel_td.innerHTML = level_span.innerHTML
-        pointsScored_td.innerHTML = 50 * addPoints;
-        mistakesPenalties_td.innerHTML = -20 * subtractPoints;
-        if (gameLevel === "easy") {
-            timeBonus_td.innerHTML = time
-        } else if (gameLevel === "medium") {
-            timeBonus_td.innerHTML = time * 2
-        }
-    } else if (gameLevel === "hard") {
-        timeBonus_td.innerHTML = time * 3
+        levelWinModal.innerHTML = gameLevel
+        pointsWinModal.innerHTML = 50 * addPoints;
+        mistakesWinModal.innerHTML = -20 * subtractPoints;
+        timeBonusWinModal.innerHTML = time;
+        if (gameLevel === "medium") {
+            timeBonusWinModal.innerHTML = `${time * 2} (added level bonus: x2)`
+        } else if (gameLevel === "hard") {
+            timeBonusWinModal.innerHTML = `${time * 3} (added level bonus: x3)`
+        };
+        totalScore.innerHTML = (50 * addPoints - 20 * subtractPoints) + parseInt(timeBonusWinModal.innerHTML);
     };
-    totalScore_strong.innerHTML = (50 * addPoints - 20 * subtractPoints) + parseInt(timeBonus_td.innerHTML);
 };
 
 // Save score to local storage
@@ -209,9 +208,9 @@ const getHighScores = JSON.parse(localStorage.getItem("highScores")) || [];
 
 save_button.addEventListener("click", function () {
     const score = {
-        name: playerName_input.value,
-        score: totalScore_strong.innerHTML,
-        level: level_span.innerHTML,
+        name: playerNameInput.value,
+        score: totalScore.innerHTML,
+        level: gameLevel,
     };
 
     getHighScores.push(score);
@@ -228,4 +227,3 @@ printScores_tbody.innerHTML = getHighScores
         <td>${score.level}</td>
         </tr>`;
     }).join("");
-
