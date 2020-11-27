@@ -136,6 +136,19 @@ h1 li {
     height: 100vh;
 }
 
+#exit {
+    position: absolute;
+    top: -20px;
+    font-size: 20px;
+}
+
+#volume-up-arena {
+    position: absolute;
+    top: -20px;
+    right: 15px;
+    font-size: 20px;
+}
+
 #board {
     clear: both;
 }
@@ -187,5 +200,21 @@ h1 li {
  h1 {
      font-size: 1.5rem;
  }
+}
+
+@media (min-width: 768px) {
+    #exit {
+        position: absolute;
+        left: -150px;
+        top: -50px;
+        font-size: 30px;
+    }
+    
+    #volume-up-arena {
+        position: absolute;
+        right: -95px;
+        top: -50px;
+        font-size: 30px;
+    }
 }
 
