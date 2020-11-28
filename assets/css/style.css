@@ -100,24 +100,31 @@ h1 li {
     height: 125px;
     margin: 10px;
     color: white;
-    border: 2px solid black;
 }
 
 .level:hover {
     color: #000;
-    border: 2px solid white;
 }
 
 #easy {
     background-color: rgb(255, 213, 0);
+    border: 2px solid rgb(255, 213, 0);
 }
 
 #medium {
     background-color: rgb(67, 176, 42);
+    border: 2px solid rgb(67, 176, 42);
 }
 
 #hard {
     background-color: rgb(227, 0, 11);
+    border: 2px solid rgb(227, 0, 11);
+}
+
+#easy:hover,
+#medium:hover,
+#hard:hover {
+    border: 2px solid white;;
 }
 
 /* ------------------- About modal ------------------- */
