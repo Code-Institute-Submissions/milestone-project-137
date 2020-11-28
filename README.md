@@ -1,8 +1,10 @@
 # Milestone Project 2
 
-![Game logo](assets/readmeimages/emmet.png)
+---
 
 <p id="top"></p>
+
+![Game logo](assets/readmeimages/emmet.png)
 
 ## Lego Memory Game
 
@@ -120,3 +122,47 @@ The main image in main menu section is Emmet which is well know character from L
 ## 6️⃣ Deployment 🚀
 
 This project was developed in Visual Studio Code editor. All developments were pushed to the corresponding repository in GitHub account.
+
+In order to deploy the website to GitHub pages, I:
+
+- Selected the Repository from the GitHub Dashboard.
+
+- Navigated to "Settings" then "GitHub Pages".
+
+- Selected "master branch" in Source section.
+
+- Page auto refreshed and link generated under GitHub Pages section:
+
+  👉 Your site is published at https://zokam1411.github.io/milestone-project-1/
+
+### To run this project locally:
+
+- Select the Repository from the GitHub Dashboard.
+
+- Click the green button labelled 'Code'.
+
+- Click 'Download ZIP'.
+
+- Extract ZIP file on your computer.
+
+- Open folder and open index.html in web browser.
+
+### To clone this project:
+
+- Select the Repository from the GitHub Dashboard.
+
+- Click the green button labelled 'Code'.
+
+- To clone the repository using:
+    - HTTPS: under "Clone with HTTPS", click checklist icon.
+    - SSH: click Use SSH, then click checklist icon.
+
+- Open Git Bash.
+
+- Change the current working directory to the location where you want the cloned directory.
+
+- Type 'git clone', and then paste the URL you copied earlier.
+
+- Press Enter to create your local clone.
+
+<div align="center"><p style="text-align: center"><a href="#top">Back to top ⬆️</a></p></div>
