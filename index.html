@@ -60,15 +60,14 @@
                 <div class="col-12 offset-md-3 col-md-6 offset-lg-4 col-lg-4">
                     <div id="game-arena">
                         <div>
-                            <p class="float-left" id="exit">Quit <i class="fas fa-door-open"></i></p>
+                            <p class="float-left reload" id="exit">Quit <i class="fas fa-door-open"></i></p>
                             <p class="float-right" id="volume-up-arena">On <i class="fas fa-volume-up"></i></p>
                         </div>
-                        <p id="points" class="text-center"><span class="p-1">Points:</span><span class="p-1"></span></p>
-                        <p id="level" class="float-left"><span class="p-1">Level:</span><span class="p-1"></span></p>
-                        <p id="time" class="float-right"><span class="p-1">Time:</span><span class="p-1"></span></p>
+                        <p id="points" class="text-center"><span class="pl-1">Points:</span><span class="pr-1"></span></p>
+                        <p id="level" class="float-left"><span class="pl-1">Level:</span><span class="pr-1"></span></p>
+                        <p id="time" class="float-right"><span class="pl-1">Time:</span><span class="pr-1"></span></p>
                         <div id="board" class="clearfix text-center"></div>
-                        <p id="counter" class="text-center mt-3"><span class="p-1">Turn counter:</span><span
-                                class="p-1"></span></p>
+                        <p id="counter" class="text-center mt-3"><span class="pl-1">Turn counter:</span><span class="pr-1"></span></p>
                     </div>
                 </div>
             </div>
@@ -159,8 +158,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-warning mr-auto" id="clear">Clear scores</button>
-                    <button type="button" class="btn btn-danger" data-dismiss="modal"
-                        onclick="window.location.reload()">Close</button>
+                    <button type="button" class="btn btn-danger reload" data-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
@@ -219,10 +217,9 @@
                         <input type="text" id="playerName" name="playerName">
                     </form>
                     <div class="modal-footer text-center">
-                        <button type="button" class="btn btn-success" id="save-score" data-dismiss="modal"
-                            onclick="window.location.reload()">Save</button>
-                        <button type="button" class="btn btn-danger" data-dismiss="modal"
-                            onclick="window.location.reload()">Close</button>
+                        <button type="button" class="btn btn-success reload" id="save-score"
+                            data-dismiss="modal">Save</button>
+                        <button type="button" class="btn btn-danger reload" data-dismiss="modal">Close</button>
                     </div>
                 </div>
             </div>
@@ -239,8 +236,7 @@
                     <p>Play this level again?</p>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-success" id="play-again" data-dismiss="modal">Yes</button>
-                        <button type="button" class="btn btn-danger reload" data-dismiss="modal"
-                            onclick="window.location.reload();">No</button>
+                        <button type="button" class="btn btn-danger reload" data-dismiss="modal">No</button>
                     </div>
                 </div>
             </div>
