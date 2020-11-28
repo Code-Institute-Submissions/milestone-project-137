@@ -1,6 +1,6 @@
 # Milestone Project 2
 
-LOGO HERE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+![Game logo](assets/readmeimages/emmet.png)
 
 <p id="top"></p>
 
@@ -54,9 +54,14 @@ This project uses HTML5, CSS3 and Vanilla JavaScript to make the individual feat
 
 ### Design:
 #### Colour Scheme:
-- !!!!!!!!!!!!!!!!!!!!!!! What colours?????????????????
+4 primary colours are used:
+- ![#ffd500 sample](assets/readmeimages/yellow.png) #ffd500
+- ![#008adb sample](assets/readmeimages/blue.png) #008adb
+- ![#e3000b sample](assets/readmeimages/red.png) #e3000b
+
 #### Typography:
-- !!!!!!!!!!!!!!!!!!!!!!! What font???????????????????
+
+
 #### Content Structure:
 - !!!!!!!!!!!!!!!!!!!!!!! Describe structure??????????????
 #### Images:
