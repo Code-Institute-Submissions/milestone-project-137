@@ -54,19 +54,26 @@ This project uses HTML5, CSS3 and Vanilla JavaScript to make the individual feat
 
 ### Design:
 #### Colour Scheme:
-4 primary colours are used:
-- ![#ffd500 sample](assets/readmeimages/yellow.png) #ffd500
-- ![#008adb sample](assets/readmeimages/blue.png) #008adb
-- ![#e3000b sample](assets/readmeimages/red.png) #e3000b
-- ![#43b02a sample](assets/readmeimages/green.png) #43b02a
+4 primary colours are used which are the main Lego colours:
+- ![#ffd500 sample](assets/readmeimages/yellow.png) #ffd500 used as a background for main menu section.
+- ![#008adb sample](assets/readmeimages/blue.png) #008adb used as a background for modals and buttons in main menu section.
+- ![#e3000b sample](assets/readmeimages/red.png) #e3000b used as a background for main play button in main menu section.
+- ![#43b02a sample](assets/readmeimages/green.png) #43b02a used as a background for cards.
+
+All colours were used to style various elements in application.
 
 #### Typography:
+The "Goldman" font is the main font used throughout the whole website with Sans Serif as the fall back font in case the font isn't imported into the site correctly.
+The "Roboto Mono" font is the font used in main arena section to prevent "jumping" text while numbers are changing.
 
+Both fonts are attractive and appropriate.
 
 #### Content Structure:
-- !!!!!!!!!!!!!!!!!!!!!!! Describe structure??????????????
+The main game geometry of the game is square, it refers in this way to Lego bricks. The game base on two sections and modals. All modals are square and have blue backgrounds. It is very easy solution to make sure all will be good visible on mobile devices.
+
 #### Images:
-- !!!!!!!!!!!!!!!!!!!!!!! Images role???????????????????
+The main image in main menu section is Emmet which is well know character from Lego movie. It will focus attention around younger and also older players.
+
 #### Wireframes:
 - <a href="assets/readmeimages/desktop-wireframes.pdf" target="_blank">Desktop wireframes</a>
 - <a href="assets/readmeimages/mobile-wireframes.pdf" target="_blank">Mobile wireframes</a>
