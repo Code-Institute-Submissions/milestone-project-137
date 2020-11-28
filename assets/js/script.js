@@ -51,14 +51,20 @@ const clearButton = document.getElementById("clear");
 const timesUpModal = document.getElementById("times-up-modal");
 const playAgainButton = document.getElementById("play-again").addEventListener('click', function () { playAgain() });
 
+// Reload page buttons
+const reload = document.querySelectorAll(".reload")
+reload.forEach(element => {
+    element.addEventListener('click', function () { location.reload() });
+});
 
-// ----------------------- JS variables
+// JS variables
 let turnCounter = 0;
 let time = 20;
 let addPoints = 0;
 let subtractPoints = 0;
 let gameLevel;
 let pairs;
+
 // ----------------------- Game start
 function startGame() {
     gameArenaSection.style.display = "none";
