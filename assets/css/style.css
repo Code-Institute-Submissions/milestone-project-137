@@ -171,6 +171,7 @@ h1 li {
     background-color:  #ffd500;
     color: #000000;
     font-family: 'Roboto Mono', sans-serif;
+    font-weight: bold;
 }
 
 #level span,
@@ -178,6 +179,7 @@ h1 li {
 #counter span {
     background-color: #008adb;
     font-family: 'Roboto Mono', sans-serif;
+    font-weight: bold;
 }
 
 /* ------------------- Cards (js) ------------------- */
