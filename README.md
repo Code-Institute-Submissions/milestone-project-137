@@ -58,6 +58,7 @@ This project uses HTML5, CSS3 and Vanilla JavaScript to make the individual feat
 - ![#ffd500 sample](assets/readmeimages/yellow.png) #ffd500
 - ![#008adb sample](assets/readmeimages/blue.png) #008adb
 - ![#e3000b sample](assets/readmeimages/red.png) #e3000b
+- ![#43b02a sample](assets/readmeimages/green.png) #43b02a
 
 #### Typography:
 
