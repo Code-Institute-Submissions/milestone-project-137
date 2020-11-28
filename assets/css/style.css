@@ -162,6 +162,7 @@ h1 li {
 
 #points span {
     background-color:  rgb(255, 213, 0);
+    color: #000;
 }
 
 #level span,
