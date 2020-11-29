@@ -63,11 +63,13 @@
                             <p class="float-left reload" id="exit">Quit <i class="fas fa-door-open"></i></p>
                             <p class="float-right" id="volume-up-arena">On <i class="fas fa-volume-up"></i></p>
                         </div>
-                        <p id="points" class="text-center"><span class="pl-1">Points:</span><span class="pr-1"></span></p>
+                        <p id="points" class="text-center"><span class="pl-1">Points:</span><span class="pr-1"></span>
+                        </p>
                         <p id="level" class="float-left"><span class="pl-1">Level:</span><span class="pr-1"></span></p>
                         <p id="time" class="float-right"><span class="pl-1">Time:</span><span class="pr-1"></span></p>
                         <div id="board" class="clearfix text-center"></div>
-                        <p id="counter" class="text-center mt-3"><span class="pl-1">Turn counter:</span><span class="pr-1"></span></p>
+                        <p id="counter" class="text-center mt-3"><span class="pl-1">Turn counter:</span><span
+                                class="pr-1"></span></p>
                     </div>
                 </div>
             </div>
@@ -144,17 +146,48 @@
             <div class="modal-content">
                 <div class="modal-body">
                     <h2>Highscores:</h2>
-                    <table class="table text-center p-0">
-                        <thead>
-                            <tr>
-                                <th scope="col">Name</th>
-                                <th scope="col">Points</th>
-                                <th scope="col">Level</th>
-                            </tr>
-                        </thead>
-                        <tbody id="print-scores">
-                        </tbody>
-                    </table>
+                    <div id="easy-table">
+                        <table class="table text-center p-0">
+                            <thead>
+                                <p class="m-0">Level: easy</p>
+                                <tr>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Points</th>
+                                    <th scope="col">Turns</th>
+                                </tr>
+                            </thead>
+                            <tbody id="print-scores-easy">
+                            </tbody>
+                        </table>
+                    </div>
+                    <div id="medium-table">
+                        <p class="m-0">Level: medium</p>
+                        <table class="table text-center p-0">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Points</th>
+                                    <th scope="col">Turns</th>
+                                </tr>
+                            </thead>
+                            <tbody id="print-scores-medium">
+                            </tbody>
+                        </table>
+                    </div>
+                    <div id="hard-table">
+                        <table class="table text-center p-0">
+                            <p class="m-0">Level: hard</p>
+                            <thead>
+                                <tr>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Points</th>
+                                    <th scope="col">Turns</th>
+                                </tr>
+                            </thead>
+                            <tbody id="print-scores-hard">
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-warning mr-auto" id="clear">Clear scores</button>
@@ -217,8 +250,7 @@
                         <input type="text" id="playerName" name="playerName">
                     </form>
                     <div class="modal-footer text-center">
-                        <button type="button" class="btn btn-success reload" id="save-score"
-                            data-dismiss="modal">Save</button>
+                        <button type="button" class="btn btn-success" id="save-score">Save</button>
                         <button type="button" class="btn btn-danger reload" data-dismiss="modal">Close</button>
                     </div>
                 </div>

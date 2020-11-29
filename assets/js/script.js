@@ -46,6 +46,9 @@ const saveButton = document.getElementById("save-score");
 
 // Highscores modal
 const clearButton = document.getElementById("clear");
+const easyTable = document.getElementById("easy-table");
+const mediumTable = document.getElementById("medium-table");
+const hardTable = document.getElementById("hard-table");
 
 // Times up modal
 const timesUpModal = document.getElementById("times-up-modal");
@@ -59,7 +62,7 @@ reload.forEach(element => {
 
 // JS variables
 let turnCounter = 0;
-let time = 20;
+let time = 60;
 let addPoints = 0;
 let subtractPoints = 0;
 let gameLevel;
@@ -230,30 +233,86 @@ function playAgain() {
 };
 
 // Save score to local storage
-const printScore = document.getElementById("print-scores");
-const getHighScores = JSON.parse(localStorage.getItem("highScores")) || [];
+let getHighScores;
+let printScores;
+const getHighScoresEasy = JSON.parse(localStorage.getItem("highScoresEasy")) || [];
+const printScoresEasy = document.getElementById("print-scores-easy");
+const getHighScoresMedium = JSON.parse(localStorage.getItem("highScoresMedium")) || [];
+const printScoresMedium = document.getElementById("print-scores-medium");
+const getHighScoresHard = JSON.parse(localStorage.getItem("highScoresHard")) || [];
+const printScoresHard = document.getElementById("print-scores-hard");
+
 clearButton.addEventListener("click", function () {
     window.localStorage.clear()
-    printScore.style.display = "none"
+    printScoresEasy.style.display = "none"
+    printScoresMedium.style.display = "none"
+    printScoresHard.style.display = "none"
 });
 saveButton.addEventListener("click", function () {
     const score = {
         name: playerNameInput.value,
         score: totalScore.innerHTML,
-        level: gameLevel,
+        turns: turnCounter,
     };
 
+    if (gameLevel === "easy") {
+        getHighScores = getHighScoresEasy
+        printScores = printScoresEasy
+        mediumTable.style.display = "none"
+        hardTable.style.display = "none"
+    } else if (gameLevel === "medium") {
+        getHighScores = getHighScoresMedium
+        printScores = printScoresMedium
+        easyTable.style.display = "none"
+        hardTable.style.display = "none"
+    } else if (gameLevel === "hard") {
+        getHighScores = getHighScoresHard
+        printScores = printScoresHard
+        easyTable.style.display = "none"
+        mediumTable.style.display = "none"
+    };
     getHighScores.push(score);
     getHighScores.sort((a, b) => b.score - a.score);
+    getHighScores.splice(5);
+    localStorage.setItem("highScoresEasy", JSON.stringify(getHighScoresEasy));
+    localStorage.setItem("highScoresMedium", JSON.stringify(getHighScoresMedium));
+    localStorage.setItem("highScoresHard", JSON.stringify(getHighScoresHard));
+    $('#highscores-modal').modal('show');
+    $('#game-win-modal').modal('hide');
 
-    localStorage.setItem("highScores", JSON.stringify(getHighScores))
+    printScores.innerHTML = getHighScores
+        .map(score => {
+            return `<tr>
+        <td>${score.name}</td>
+        <td>${score.score}</td>
+        <td>${score.turns}</td>
+        </tr>`;
+        }).join("");
 });
 
-printScore.innerHTML = getHighScores
+printScoresEasy.innerHTML = getHighScoresEasy
     .map(score => {
         return `<tr>
         <td>${score.name}</td>
         <td>${score.score}</td>
-        <td>${score.level}</td>
+        <td>${score.turns}</td>
+        </tr>`;
+    }).join("");
+
+printScoresMedium.innerHTML = getHighScoresMedium
+    .map(score => {
+        return `<tr>
+        <td>${score.name}</td>
+        <td>${score.score}</td>
+        <td>${score.turns}</td>
+        </tr>`;
+    }).join("");
+
+printScoresHard.innerHTML = getHighScoresHard
+    .map(score => {
+        return `<tr>
+        <td>${score.name}</td>
+        <td>${score.score}</td>
+        <td>${score.turns}</td>
         </tr>`;
     }).join("");
