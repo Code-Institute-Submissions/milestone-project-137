@@ -28,7 +28,7 @@ const hardButton = document.getElementById("hard").addEventListener("click", fun
 const mainMenuSection = document.getElementById("main-menu-section");
 
 // Game arena section
-const quit = document.getElementById("exit").addEventListener("click", function () {startGame()});
+const quit = document.getElementById("exit").addEventListener("click", function () { startGame() });
 const gameArenaSection = document.getElementById("game-arena-section");
 const boardArena = document.getElementById("board");
 const pointsArena = document.querySelector("#points span:nth-child(2)");
@@ -54,7 +54,7 @@ const hardTable = document.getElementById("hard-table");
 // Times up modal
 const timesUpModal = document.getElementById("times-up-modal");
 const playAgainButton = document.getElementById("play-again").addEventListener('click', function () { playAgain() });
-const noAgainButton = document.getElementById("play-again-no").addEventListener("click", function () {startGame()});
+const noAgainButton = document.getElementById("play-again-no").addEventListener("click", function () { startGame() });
 
 // Reload page buttons
 const reload = document.querySelectorAll(".reload")
@@ -62,10 +62,10 @@ reload.forEach(element => {
     element.addEventListener('click', function () { location.reload() });
 });
 // Audio
-const click = new Audio ("assets/audio/click.mp3");
+const click = new Audio("assets/audio/click.mp3");
 const clickButton = document.querySelectorAll(".click");
 clickButton.forEach(element => {
-    element.addEventListener("click", function () {click.play()});
+    element.addEventListener("click", function () { click.play() });
 });
 
 // JS variables
@@ -114,8 +114,9 @@ function level(userChoice) {
     gameArenaSection.style.display = "flex";
     boardArena.innerHTML = cards;
     counterArena.innerHTML = turnCounter;
+    timeArena.innerHTML = time;
     shuffle();
-    timer();
+    timerStart();
     scoreSystem();
 };
 
@@ -199,16 +200,21 @@ function restore2Cards(firstCardNo, no) {
 }
 
 // Set game timer
+let countDown;
+function timerStart() {
+    countDown = setInterval(timer, 1000);
+};
 function timer() {
     time--;
     timeArena.innerHTML = time
-    if (time === 0) {
+    if (time < 10 && time > 0) {
+        timeArena.innerHTML = "0" + time
+    } else if (time === 0) {
         $('#times-up-modal').modal('show');
-        return;
+        clearInterval(countDown);
     } else if (pairs === 0) {
-        return;
+        clearInterval(countDown);
     };
-    setTimeout(timer, 1000);
 };
 
 // Score system
