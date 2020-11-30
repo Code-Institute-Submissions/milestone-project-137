@@ -28,6 +28,7 @@ const hardButton = document.getElementById("hard").addEventListener("click", fun
 const mainMenuSection = document.getElementById("main-menu-section");
 
 // Game arena section
+const quit = document.getElementById("exit").addEventListener("click", function () {startGame()});
 const gameArenaSection = document.getElementById("game-arena-section");
 const boardArena = document.getElementById("board");
 const pointsArena = document.querySelector("#points span:nth-child(2)");
@@ -53,24 +54,32 @@ const hardTable = document.getElementById("hard-table");
 // Times up modal
 const timesUpModal = document.getElementById("times-up-modal");
 const playAgainButton = document.getElementById("play-again").addEventListener('click', function () { playAgain() });
+const noAgainButton = document.getElementById("play-again-no").addEventListener("click", function () {startGame()});
 
 // Reload page buttons
 const reload = document.querySelectorAll(".reload")
 reload.forEach(element => {
     element.addEventListener('click', function () { location.reload() });
 });
+// Audio
+const click = new Audio ("assets/audio/click.mp3");
+const clickButton = document.querySelectorAll(".click");
+clickButton.forEach(element => {
+    element.addEventListener("click", function () {click.play()});
+});
 
 // JS variables
-let turnCounter = 0;
-let time = 60;
-let addPoints = 0;
-let subtractPoints = 0;
+let turnCounter;
+let time;
+let addPoints;
+let subtractPoints;
 let gameLevel;
 let pairs;
 
 // ----------------------- Game start
 function startGame() {
     gameArenaSection.style.display = "none";
+    mainMenuSection.style.display = "flex"
 }
 
 window.onload = startGame;
@@ -97,6 +106,10 @@ function level(userChoice) {
     for (i = 0; i <= cardNum; i++) {
         cards = `${cards}<div class="card" onclick="reverse(${i})" id="c${i}"></div>`
     };
+    turnCounter = 0;
+    time = 20;
+    addPoints = 0;
+    subtractPoints = 0;
     mainMenuSection.style.display = "none";
     gameArenaSection.style.display = "flex";
     boardArena.innerHTML = cards;
@@ -194,7 +207,7 @@ function timer() {
         return;
     } else if (pairs === 0) {
         return;
-    }
+    };
     setTimeout(timer, 1000);
 };
 
@@ -219,10 +232,6 @@ function scoreSystem() {
 
 // Play again when times up
 function playAgain() {
-    turnCounter = 0;
-    time = 20;
-    addPoints = 0;
-    subtractPoints = 0;
     if (gameLevel === "easy") {
         level("easy");
     } else if (gameLevel === "medium") {

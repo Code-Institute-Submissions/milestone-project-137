@@ -32,20 +32,20 @@
                                 </ul>
                             </strong>
                         </h1>
-                        <div id="volume-on"><i class="fas fa-volume-up fa-2x"></i></div>
+                        <div id="volume-on" class="click"><i class="fas fa-volume-up fa-2x"></i></div>
                         <div class="row">
                             <div class="offset-1 col-10">
                                 <div id="emmet"><img src="assets/images/emmet.png" alt="Emmet lego minifigure"></div>
                             </div>
                         </div>
                         <div class="options">
-                            <button type="button" class="btn-block mx-auto p-4 mt-3 mb-3" id="play" data-toggle="modal"
+                            <button type="button" class="btn-block mx-auto p-4 mt-3 mb-3 click" id="play" data-toggle="modal"
                                 data-target="#level-modal">Play</button>
-                            <button type="button" class="btn-block mx-auto p-1" id="about" data-toggle="modal"
+                            <button type="button" class="btn-block mx-auto p-1 click" id="about" data-toggle="modal"
                                 data-target="#about-modal">About</button>
-                            <button type="button" class="btn-block mx-auto p-1" id="highscores" data-toggle="modal"
+                            <button type="button" class="btn-block mx-auto p-1 click" id="highscores" data-toggle="modal"
                                 data-target="#highscores-modal">Highscores</button>
-                            <button type="button" class="btn-block mx-auto p-1" id="credits" data-toggle="modal"
+                            <button type="button" class="btn-block mx-auto p-1 click" id="credits" data-toggle="modal"
                                 data-target="#credits-modal">Credits</button>
                         </div>
                     </div>
@@ -60,8 +60,8 @@
                 <div class="col-12 offset-md-3 col-md-6 offset-lg-4 col-lg-4">
                     <div id="game-arena">
                         <div>
-                            <p class="float-left reload" id="exit">Quit <i class="fas fa-door-open"></i></p>
-                            <p class="float-right" id="volume-up-arena">On <i class="fas fa-volume-up"></i></p>
+                            <p class="float-left click" id="exit">Quit <i class="fas fa-door-open"></i></p>
+                            <p class="float-right click" id="volume-up-arena">On <i class="fas fa-volume-up"></i></p>
                         </div>
                         <p id="points" class="text-center"><span class="pl-1">Points:</span><span class="pr-1"></span>
                         </p>
@@ -82,21 +82,21 @@
             <div class="modal-content">
                 <div class="modal-body mx-auto">
                     <h2>Select difficulty:</h2>
-                    <button type="button" class="level" id="easy" data-dismiss="modal">
+                    <button type="button" class="level click" id="easy" data-dismiss="modal">
                         <h3>Easy</h3>
                         <p>8 cards</p>
                     </button>
-                    <button type="button" class="level" id="medium" data-dismiss="modal">
+                    <button type="button" class="level click" id="medium" data-dismiss="modal">
                         <h3>Medium</h3>
                         <p>12 cards</p>
                     </button>
-                    <button type="button" class="level" id="hard" data-dismiss="modal">
+                    <button type="button" class="level click" id="hard" data-dismiss="modal">
                         <h3>Hard</h3>
                         <p>16 cards</p>
                     </button>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-danger click" data-dismiss="modal">Cancel</button>
                 </div>
             </div>
         </div>
@@ -134,7 +134,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-danger click" data-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
@@ -190,8 +190,8 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-warning mr-auto" id="clear">Clear scores</button>
-                    <button type="button" class="btn btn-danger reload" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-warning mr-auto click" id="clear">Clear scores</button>
+                    <button type="button" class="btn btn-danger reload click" data-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
@@ -209,7 +209,7 @@
                     <h2>Special thanks:</h2>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-danger click" data-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
@@ -250,8 +250,8 @@
                         <input type="text" id="playerName" name="playerName">
                     </form>
                     <div class="modal-footer text-center">
-                        <button type="button" class="btn btn-success" id="save-score">Save</button>
-                        <button type="button" class="btn btn-danger reload" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-success click" id="save-score">Save</button>
+                        <button type="button" class="btn btn-danger reload click" data-dismiss="modal">Close</button>
                     </div>
                 </div>
             </div>
@@ -267,8 +267,8 @@
                     <p>Time's Up!</p>
                     <p>Play this level again?</p>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-success" id="play-again" data-dismiss="modal">Yes</button>
-                        <button type="button" class="btn btn-danger reload" data-dismiss="modal">No</button>
+                        <button type="button" class="btn btn-success click" id="play-again" data-dismiss="modal">Yes</button>
+                        <button type="button" class="btn btn-danger click" id="play-again-no" data-dismiss="modal">No</button>
                     </div>
                 </div>
             </div>
