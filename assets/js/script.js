@@ -28,7 +28,7 @@ const hardButton = document.getElementById("hard").addEventListener("click", fun
 const mainMenuSection = document.getElementById("main-menu-section");
 
 // Game arena section
-const quit = document.getElementById("exit").addEventListener("click", function () { startGame() });
+const quit = document.getElementById("exit")/*.addEventListener("click", function () { startGame() });*/
 const gameArenaSection = document.getElementById("game-arena-section");
 const boardArena = document.getElementById("board");
 const pointsArena = document.querySelector("#points span:nth-child(2)");
@@ -216,6 +216,8 @@ function timer() {
         clearInterval(countDown);
     };
 };
+
+quit.addEventListener("click", function() {clearInterval(countDown)});
 
 // Score system
 // Show game win modal when all pairs match
