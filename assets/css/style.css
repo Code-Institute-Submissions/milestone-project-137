@@ -12,6 +12,16 @@ body {
     color: #ffffff;
 }
 
+.volume-up {
+    cursor: pointer;
+    color: #43b02a;;
+}
+
+.volume-down {
+    cursor: pointer;
+    color: #e3000b;
+}
+
 /* ------------------- Main menu section ------------------- */
 #main-menu-section {
     background: url(../images/lego-bricks.jpg) center center no-repeat;
@@ -46,18 +56,10 @@ h1 li {
     list-style-type: none;
 }
 
-#volume-on {
+#volume-up-main {
     position: absolute;
     right: 10px;
     z-index: 1000;
-}
-
-#volume-on i {
-    cursor: pointer;
-}
-
-#volume-on i:hover {
-    color: #000000;
 }
 
 #emmet img {
@@ -149,18 +151,17 @@ h1 li {
     top: -20px;
     font-size: 20px;
 }
+#exit:hover {
+    color: #e3000b;
+    cursor: pointer;
+}
+
 
 #volume-up-arena {
     position: absolute;
     top: -20px;
     right: 15px;
     font-size: 20px;
-}
-
-#exit:hover,
-#volume-up-arena:hover {
-    color: #e3000b;
-    cursor: pointer;
 }
 
 #board {
