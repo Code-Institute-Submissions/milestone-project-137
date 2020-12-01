@@ -47,12 +47,14 @@ const timeBonusWinModal = document.getElementById("time-bonus");
 const totalScore = document.querySelector("#total-score strong");
 const playerNameInput = document.getElementById("playerName");
 const saveButton = document.getElementById("save-score");
+const closeButton = document.getElementById("close-win");
 
 // Highscores modal
 const clearButton = document.getElementById("clear");
 const easyTable = document.getElementById("easy-table");
 const mediumTable = document.getElementById("medium-table");
 const hardTable = document.getElementById("hard-table");
+const closeHighscores = document.getElementById("close-high");
 
 // Times up modal
 const timesUpModal = document.getElementById("times-up-modal");
@@ -61,14 +63,16 @@ const noAgainButton = document.getElementById("play-again-no")
 
 // ----------------------- Buttons
 // Back to main menu buttons
-quit.addEventListener("click", function() {startGame()});
-noAgainButton.addEventListener("click", function () {startGame()});
+closeButton.addEventListener("click", function () { startGame() });
+quit.addEventListener("click", function () { startGame() });
+noAgainButton.addEventListener("click", function () { startGame() });
+closeHighscores.addEventListener("click", function () { location.reload() });
 // Audio
-quit.addEventListener("click", function() {click.play()});
+quit.addEventListener("click", function () { click.play() });
 const click = new Audio("assets/audio/click.mp3");
 const clickButton = document.querySelectorAll(".click");
 clickButton.forEach(element => {
-    element.addEventListener("click", function() {click.play()});
+    element.addEventListener("click", function () { click.play() });
 });
 
 // ----------------------- Game start
@@ -209,9 +213,9 @@ function restore2Cards(firstCardNo, no) {
 // Set interval
 // Clear interval when times up or quit button hit
 // Show times up modal when time = 0
-quit.addEventListener("click", function() {clearInterval(countDown)});
-quit.addEventListener("click", function() {startGame()});
-quit.addEventListener("click", function() {click.play()});
+quit.addEventListener("click", function () { clearInterval(countDown) });
+quit.addEventListener("click", function () { startGame() });
+quit.addEventListener("click", function () { click.play() });
 let countDown;
 function timerStart() {
     countDown = setInterval(timer, 1000);
@@ -247,7 +251,7 @@ function scoreSystem() {
 };
 
 // Play again when times up
-playAgainButton.addEventListener("click", function() {playAgain()});
+playAgainButton.addEventListener("click", function () { playAgain() });
 function playAgain() {
     if (gameLevel === "easy") {
         level("easy");
@@ -268,10 +272,21 @@ const printScoresMedium = document.getElementById("print-scores-medium");
 const getHighScoresHard = JSON.parse(localStorage.getItem("highScoresHard")) || [];
 const printScoresHard = document.getElementById("print-scores-hard");
 clearButton.addEventListener("click", function () {
-    window.localStorage.clear()
-    printScoresEasy.style.display = "none"
-    printScoresMedium.style.display = "none"
-    printScoresHard.style.display = "none"
+    if (gameLevel === "easy") {
+        printScoresEasy.style.display = "none"
+        localStorage.removeItem("highScoresEasy")
+    } else if (gameLevel === "medium") {
+        printScoresMedium.style.display = "none"
+        localStorage.removeItem("highScoresMedium")
+    } else if (gameLevel === "hard") {
+        printScoresHard.style.display = "none"
+        localStorage.removeItem("highScoresHard")
+    } else {
+        window.localStorage.clear()
+        printScoresEasy.style.display = "none"
+        printScoresMedium.style.display = "none"
+        printScoresHard.style.display = "none"
+    };
 });
 saveButton.addEventListener("click", function () {
     const score = {
