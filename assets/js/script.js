@@ -20,15 +20,18 @@ const figures = [
 
 // ----------------------- Global variables
 // Game level modal
-const easyButton = document.getElementById("easy").addEventListener("click", function () { level("easy") });
-const mediumButton = document.getElementById("medium").addEventListener("click", function () { level("medium") });
-const hardButton = document.getElementById("hard").addEventListener("click", function () { level("hard") });
+const easyButton = document.getElementById("easy")
+easyButton.addEventListener("click", function () { level("easy") });
+const mediumButton = document.getElementById("medium")
+mediumButton.addEventListener("click", function () { level("medium") });
+const hardButton = document.getElementById("hard")
+hardButton.addEventListener("click", function () { level("hard") });
 
 // Main menu section
 const mainMenuSection = document.getElementById("main-menu-section");
 
 // Game arena section
-const quit = document.getElementById("exit")/*.addEventListener("click", function () { startGame() });*/
+const quit = document.getElementById("exit")
 const gameArenaSection = document.getElementById("game-arena-section");
 const boardArena = document.getElementById("board");
 const pointsArena = document.querySelector("#points span:nth-child(2)");
@@ -53,38 +56,38 @@ const hardTable = document.getElementById("hard-table");
 
 // Times up modal
 const timesUpModal = document.getElementById("times-up-modal");
-const playAgainButton = document.getElementById("play-again").addEventListener('click', function () { playAgain() });
-const noAgainButton = document.getElementById("play-again-no").addEventListener("click", function () { startGame() });
+const playAgainButton = document.getElementById("play-again");
+const noAgainButton = document.getElementById("play-again-no")
 
-// Reload page buttons
-const reload = document.querySelectorAll(".reload")
-reload.forEach(element => {
-    element.addEventListener('click', function () { location.reload() });
-});
+// ----------------------- Buttons
+// Back to main menu buttons
+quit.addEventListener("click", function() {startGame()});
+noAgainButton.addEventListener("click", function () {startGame()});
 // Audio
+quit.addEventListener("click", function() {click.play()});
 const click = new Audio("assets/audio/click.mp3");
 const clickButton = document.querySelectorAll(".click");
 clickButton.forEach(element => {
-    element.addEventListener("click", function () { click.play() });
+    element.addEventListener("click", function() {click.play()});
 });
 
-// JS variables
+// ----------------------- Game start
+window.onload = startGame;
+function startGame() {
+    mainMenuSection.style.display = "flex";
+    gameArenaSection.style.display = "none";
+};
+
+// Create cards in game arena according to the selected level
+// Hide main menu section and show game arena section
+// Set and display points, level, timer, turn counter in their starting values
+// Call functions to shuffle cards, start timer and active score system
 let turnCounter;
 let time;
 let addPoints;
 let subtractPoints;
 let gameLevel;
 let pairs;
-
-// ----------------------- Game start
-function startGame() {
-    gameArenaSection.style.display = "none";
-    mainMenuSection.style.display = "flex"
-}
-
-window.onload = startGame;
-
-// Create cards in game arena
 function level(userChoice) {
     let cards = "";
     let cardNum = 15;
@@ -106,12 +109,12 @@ function level(userChoice) {
     for (i = 0; i <= cardNum; i++) {
         cards = `${cards}<div class="card" onclick="reverse(${i})" id="c${i}"></div>`
     };
+    mainMenuSection.style.display = "none";
+    gameArenaSection.style.display = "flex";
     turnCounter = 0;
     time = 20;
     addPoints = 0;
     subtractPoints = 0;
-    mainMenuSection.style.display = "none";
-    gameArenaSection.style.display = "flex";
     boardArena.innerHTML = cards;
     counterArena.innerHTML = turnCounter;
     timeArena.innerHTML = time;
@@ -120,7 +123,7 @@ function level(userChoice) {
     scoreSystem();
 };
 
-// Shuffle cards before game starts
+// Shuffle cards before each game
 function shuffle() {
     let cardNum = 14;
     if (gameLevel === "easy") {
@@ -141,22 +144,20 @@ function shuffle() {
 // Check if one or two cards reversed
 // Check if two cards are the same
 // Add lock to prevent reverse more than 2 cards before check
-// Add scoring system that will add points for cards that match and subtract points for cards that not match
+// Update turn counter with every two cards reversed
+// Call scoring function to add points when 2 cards match and subtract points when don't
 let oneVisible = false;
 let firstCardNo;
 let lock = false;
 function reverse(no) {
     if (lock === false) {
-
         lock = true;
-
         let element = `c${no}`
         let picture = `url(assets/images/${figures[no]})`
         document.getElementById(element).style.background = picture
         document.getElementById(element).style.backgroundSize = "cover";
         document.getElementById(element).classList.add("cardA");
         document.getElementById(element).classList.remove("card");
-
         if (oneVisible === false) {
             oneVisible = true;
             firstCardNo = no;
@@ -179,13 +180,19 @@ function reverse(no) {
     };
 };
 
-// When 2 reversed cards match
+// When 2 reversed cards match keep them on board
+// Remove lock
+// Update pairs variable and if 0 clear time interval
 function keep2Cards() {
     lock = false;
     pairs--;
+    if (pairs === 0) {
+        clearInterval(countDown);
+    };
 };
 
-// When 2 reversed cards do not match
+// When 2 reversed cards do not match restore them
+// Remove lock
 function restore2Cards(firstCardNo, no) {
     let element1 = `c${firstCardNo}`;
     let element2 = `c${no}`;
@@ -195,11 +202,16 @@ function restore2Cards(firstCardNo, no) {
     document.getElementById(element2).style.background = "rgb(67, 176, 42)";
     document.getElementById(element2).classList.add("card");
     document.getElementById(element2).classList.remove("cardA");
-
     lock = false;
-}
+};
 
-// Set game timer
+// Game timer
+// Set interval
+// Clear interval when times up or quit button hit
+// Show times up modal when time = 0
+quit.addEventListener("click", function() {clearInterval(countDown)});
+quit.addEventListener("click", function() {startGame()});
+quit.addEventListener("click", function() {click.play()});
 let countDown;
 function timerStart() {
     countDown = setInterval(timer, 1000);
@@ -212,12 +224,8 @@ function timer() {
     } else if (time === 0) {
         $('#times-up-modal').modal('show');
         clearInterval(countDown);
-    } else if (pairs === 0) {
-        clearInterval(countDown);
     };
 };
-
-quit.addEventListener("click", function() {clearInterval(countDown)});
 
 // Score system
 // Show game win modal when all pairs match
@@ -239,6 +247,7 @@ function scoreSystem() {
 };
 
 // Play again when times up
+playAgainButton.addEventListener("click", function() {playAgain()});
 function playAgain() {
     if (gameLevel === "easy") {
         level("easy");
@@ -258,7 +267,6 @@ const getHighScoresMedium = JSON.parse(localStorage.getItem("highScoresMedium"))
 const printScoresMedium = document.getElementById("print-scores-medium");
 const getHighScoresHard = JSON.parse(localStorage.getItem("highScoresHard")) || [];
 const printScoresHard = document.getElementById("print-scores-hard");
-
 clearButton.addEventListener("click", function () {
     window.localStorage.clear()
     printScoresEasy.style.display = "none"
@@ -271,7 +279,6 @@ saveButton.addEventListener("click", function () {
         score: totalScore.innerHTML,
         turns: turnCounter,
     };
-
     if (gameLevel === "easy") {
         getHighScores = getHighScoresEasy
         printScores = printScoresEasy
@@ -296,7 +303,6 @@ saveButton.addEventListener("click", function () {
     localStorage.setItem("highScoresHard", JSON.stringify(getHighScoresHard));
     $('#highscores-modal').modal('show');
     $('#game-win-modal').modal('hide');
-
     printScores.innerHTML = getHighScores
         .map(score => {
             return `<tr>
@@ -306,7 +312,6 @@ saveButton.addEventListener("click", function () {
         </tr>`;
         }).join("");
 });
-
 printScoresEasy.innerHTML = getHighScoresEasy
     .map(score => {
         return `<tr>
@@ -315,7 +320,6 @@ printScoresEasy.innerHTML = getHighScoresEasy
         <td>${score.turns}</td>
         </tr>`;
     }).join("");
-
 printScoresMedium.innerHTML = getHighScoresMedium
     .map(score => {
         return `<tr>
@@ -324,7 +328,6 @@ printScoresMedium.innerHTML = getHighScoresMedium
         <td>${score.turns}</td>
         </tr>`;
     }).join("");
-
 printScoresHard.innerHTML = getHighScoresHard
     .map(score => {
         return `<tr>
