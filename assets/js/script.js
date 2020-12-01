@@ -67,13 +67,19 @@ closeButton.addEventListener("click", function () { startGame() });
 quit.addEventListener("click", function () { startGame() });
 noAgainButton.addEventListener("click", function () { startGame() });
 closeHighscores.addEventListener("click", function () { location.reload() });
-// Audio
+// Audio buttons
 quit.addEventListener("click", function () { click.play() });
-const click = new Audio("assets/audio/click.mp3");
 const clickButton = document.querySelectorAll(".click");
 clickButton.forEach(element => {
     element.addEventListener("click", function () { click.play() });
 });
+
+// ----------------------- Audio
+const click = new Audio("assets/audio/click.mp3");
+const wrong = new Audio("assets/audio/wrong.mp3");
+const match = new Audio("assets/audio/match.mp3");
+const finish = new Audio("assets/audio/finish.mp3");
+const over = new Audio("assets/audio/over.mp3");
 
 // ----------------------- Game start
 window.onload = startGame;
@@ -168,9 +174,12 @@ function reverse(no) {
             lock = false;
         } else {
             if (figures[firstCardNo] === figures[no]) {
+                match.muted = false;
+                match.play();
                 keep2Cards();
                 addPoints++;
             } else {
+                wrong.play();
                 setTimeout(function () {
                     restore2Cards(firstCardNo, no);
                 }, 750);
@@ -187,11 +196,14 @@ function reverse(no) {
 // When 2 reversed cards match keep them on board
 // Remove lock
 // Update pairs variable and if 0 clear time interval
+// Play finish audio when all pairs reversed
 function keep2Cards() {
     lock = false;
     pairs--;
     if (pairs === 0) {
         clearInterval(countDown);
+        match.muted = true;
+        finish.play();
     };
 };
 
@@ -214,8 +226,6 @@ function restore2Cards(firstCardNo, no) {
 // Clear interval when times up or quit button hit
 // Show times up modal when time = 0
 quit.addEventListener("click", function () { clearInterval(countDown) });
-quit.addEventListener("click", function () { startGame() });
-quit.addEventListener("click", function () { click.play() });
 let countDown;
 function timerStart() {
     countDown = setInterval(timer, 1000);
@@ -226,6 +236,7 @@ function timer() {
     if (time < 10 && time > 0) {
         timeArena.innerHTML = "0" + time
     } else if (time === 0) {
+        over.play();
         $('#times-up-modal').modal('show');
         clearInterval(countDown);
     };
