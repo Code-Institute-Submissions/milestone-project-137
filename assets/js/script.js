@@ -52,6 +52,7 @@ const saveButton = document.getElementById("save-score");
 const closeButton = document.getElementById("close-win");
 
 // Highscores modal
+const highscoresButton = document.getElementById("highscores");
 const clearButton = document.getElementById("clear");
 const easyTable = document.getElementById("easy-table");
 const mediumTable = document.getElementById("medium-table");
@@ -79,6 +80,17 @@ clickButton.forEach(element => {
 // Volume toggle
 const volumeOnIcon = document.querySelectorAll(".fa-volume-up");
 volumeMenu.addEventListener("click", function () {
+    volumeOnIcon.forEach(element => {
+        element.classList.toggle("fa-volume-up");
+        element.classList.toggle("fa-volume-mute");
+    })
+    click.muted = !click.muted;
+    wrong.muted = !wrong.muted;
+    match.muted = !match.muted;
+    finish.muted = !finish.muted;
+    over.muted = !over.muted;
+});
+volumeArena.addEventListener("click", function () {
     volumeOnIcon.forEach(element => {
         element.classList.toggle("fa-volume-up");
         element.classList.toggle("fa-volume-mute");
@@ -190,7 +202,7 @@ function reverse(no) {
             lock = false;
         } else {
             if (figures[firstCardNo] === figures[no]) {
-                match.muted = false;
+                match.volume = 1;
                 match.play();
                 keep2Cards();
                 addPoints++;
@@ -217,8 +229,8 @@ function keep2Cards() {
     lock = false;
     pairs--;
     if (pairs === 0) {
+        match.volume = 0;
         clearInterval(countDown);
-        match.muted = true;
         finish.play();
     };
 };
@@ -318,6 +330,13 @@ clearButton.addEventListener("click", function () {
         printScoresHard.style.display = "none";
     };
 });
+highscoresButton.addEventListener("click", function () {
+    gameLevel = null;
+    easyTable.style.display = "block"
+    mediumTable.style.display = "block"
+    hardTable.style.display = "block"
+    printScores.style.display = "table-row-group"
+});
 saveButton.addEventListener("click", function () {
     const score = {
         name: playerNameInput.value,
@@ -343,6 +362,7 @@ saveButton.addEventListener("click", function () {
         mediumTable.style.display = "none"
         hardTable.style.display = "block"
     };
+    printScores.style.display = "table-row-group"
     getHighScores.push(score);
     getHighScores.sort((a, b) => b.score - a.score);
     getHighScores.splice(5);
