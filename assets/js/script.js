@@ -16,23 +16,13 @@ const figures = [
     "lego7.png",
     "lego8.png",
     "lego8.png"
-]
-
+];
 // ----------------------- Global variables
-// Game level modal
-const easyButton = document.getElementById("easy")
-easyButton.addEventListener("click", function () { level("easy") });
-const mediumButton = document.getElementById("medium")
-mediumButton.addEventListener("click", function () { level("medium") });
-const hardButton = document.getElementById("hard")
-hardButton.addEventListener("click", function () { level("hard") });
-
 // Main menu section
 const mainMenuSection = document.getElementById("main-menu-section");
 const volumeMenu = document.getElementById("volume-up-menu");
-
 // Game arena section
-const quit = document.getElementById("exit")
+const quit = document.getElementById("exit");
 const gameArenaSection = document.getElementById("game-arena-section");
 const boardArena = document.getElementById("board");
 const pointsArena = document.querySelector("#points span:nth-child(2)");
@@ -40,17 +30,13 @@ const levelArena = document.querySelector("#level span:nth-child(2)");
 const timeArena = document.querySelector("#time span:nth-child(2)");
 const counterArena = document.querySelector("#counter span:nth-child(2)");
 const volumeArena = document.getElementById("volume-up-arena");
-
-// Game win modal
-const levelWinModal = document.getElementById("game-level");
-const pointsWinModal = document.getElementById("points-scored");
-const mistakesWinModal = document.getElementById("mistakes-penalties")
-const timeBonusWinModal = document.getElementById("time-bonus");
-const totalScore = document.querySelector("#total-score strong");
-const playerNameInput = document.getElementById("playerName");
-const saveButton = document.getElementById("save-score");
-const closeButton = document.getElementById("close-win");
-
+// Game level modal
+const easyButton = document.getElementById("easy");
+easyButton.addEventListener("click", function () { level("easy") });
+const mediumButton = document.getElementById("medium");
+mediumButton.addEventListener("click", function () { level("medium") });
+const hardButton = document.getElementById("hard");
+hardButton.addEventListener("click", function () { level("hard") });
 // Highscores modal
 const highscoresButton = document.getElementById("highscores");
 const clearButton = document.getElementById("clear");
@@ -58,7 +44,15 @@ const easyTable = document.getElementById("easy-table");
 const mediumTable = document.getElementById("medium-table");
 const hardTable = document.getElementById("hard-table");
 const closeHighscores = document.getElementById("close-high");
-
+// Game win modal
+const levelWinModal = document.getElementById("game-level");
+const pointsWinModal = document.getElementById("points-scored");
+const mistakesWinModal = document.getElementById("mistakes-penalties");
+const timeBonusWinModal = document.getElementById("time-bonus");
+const totalScore = document.querySelector("#total-score strong");
+const playerNameInput = document.getElementById("playerName");
+const saveButton = document.getElementById("save-score");
+const closeButton = document.getElementById("close-win");
 // Times up modal
 const timesUpModal = document.getElementById("times-up-modal");
 const playAgainButton = document.getElementById("play-again");
@@ -70,20 +64,25 @@ closeButton.addEventListener("click", function () { startGame() });
 quit.addEventListener("click", function () { startGame() });
 noAgainButton.addEventListener("click", function () { startGame() });
 closeHighscores.addEventListener("click", function () { startGame() });
-//closeHighscores.addEventListener("click", function () { location.reload() });
 // Audio buttons
-quit.addEventListener("click", function () { click.play() });
 const clickButton = document.querySelectorAll(".click");
 clickButton.forEach(element => {
     element.addEventListener("click", function () { click.play() });
 });
-// Volume toggle
+// ----------------------- Audio
+// Audio files
+const click = new Audio("assets/audio/click.mp3");
+const wrong = new Audio("assets/audio/wrong.mp3");
+const match = new Audio("assets/audio/match.mp3");
+const finish = new Audio("assets/audio/finish.mp3");
+const over = new Audio("assets/audio/over.mp3");
+// Volume on/off toggle
 const volumeOnIcon = document.querySelectorAll(".fa-volume-up");
 volumeMenu.addEventListener("click", function () {
     volumeOnIcon.forEach(element => {
         element.classList.toggle("fa-volume-up");
         element.classList.toggle("fa-volume-mute");
-    })
+    });
     click.muted = !click.muted;
     wrong.muted = !wrong.muted;
     match.muted = !match.muted;
@@ -94,7 +93,7 @@ volumeArena.addEventListener("click", function () {
     volumeOnIcon.forEach(element => {
         element.classList.toggle("fa-volume-up");
         element.classList.toggle("fa-volume-mute");
-    })
+    });
     click.muted = !click.muted;
     wrong.muted = !wrong.muted;
     match.muted = !match.muted;
@@ -102,19 +101,12 @@ volumeArena.addEventListener("click", function () {
     over.muted = !over.muted;
 });
 
-// ----------------------- Audio
-const click = new Audio("assets/audio/click.mp3");
-const wrong = new Audio("assets/audio/wrong.mp3");
-const match = new Audio("assets/audio/match.mp3");
-const finish = new Audio("assets/audio/finish.mp3");
-const over = new Audio("assets/audio/over.mp3");
-
 // ----------------------- Game start
-window.onload = startGame;
 function startGame() {
     mainMenuSection.style.display = "flex";
     gameArenaSection.style.display = "none";
 };
+window.onload = startGame;
 
 // Create cards in game arena according to the selected level
 // Hide main menu section and show game arena section
@@ -305,6 +297,7 @@ function playAgain() {
 };
 
 // Save score to local storage
+// Show score in highscores modal
 const printScoresEasy = document.getElementById("print-scores-easy");
 const printScoresMedium = document.getElementById("print-scores-medium");
 const printScoresHard = document.getElementById("print-scores-hard");
@@ -405,28 +398,3 @@ saveButton.addEventListener("click", function () {
         </tr>`;
         }).join("");
 });
-/*printScoresEasy.innerHTML = getHighScoresEasy
-    .map(score => {
-        return `<tr>
-        <td>${score.name}</td>
-        <td>${score.score}</td>
-        <td>${score.turns}</td>
-        </tr>`;
-    }).join("");
-printScoresMedium.innerHTML = getHighScoresMedium
-    .map(score => {
-        return `<tr>
-        <td>${score.name}</td>
-        <td>${score.score}</td>
-        <td>${score.turns}</td>
-        </tr>`;
-    }).join("");
-printScoresHard.innerHTML = getHighScoresHard
-    .map(score => {
-        return `<tr>
-        <td>${score.name}</td>
-        <td>${score.score}</td>
-        <td>${score.turns}</td>
-        </tr>`;
-    }).join("");
-*/
