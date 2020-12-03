@@ -109,23 +109,23 @@ h1 li {
 
 #easy {
     background-color: #ffd500;
-    border: 2px solid #ffd500;
+    border: 3px solid #ffd500;
 }
 
 #medium {
     background-color: #43b02a;
-    border: 2px solid #43b02a;
+    border: 3px solid #43b02a;
 }
 
 #hard {
     background-color: #e3000b;
-    border: 2px solid #e3000b;
+    border: 3px solid #e3000b;
 }
 
 #easy:hover,
 #medium:hover,
 #hard:hover {
-    border: 2px solid #ffffff;;
+    border: 3px solid #ffffff;;
 }
 
 /* ------------------- About modal ------------------- */
