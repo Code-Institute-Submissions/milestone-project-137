@@ -29,6 +29,7 @@ hardButton.addEventListener("click", function () { level("hard") });
 
 // Main menu section
 const mainMenuSection = document.getElementById("main-menu-section");
+const volumeMenu = document.getElementById("volume-up-menu");
 
 // Game arena section
 const quit = document.getElementById("exit")
@@ -38,6 +39,7 @@ const pointsArena = document.querySelector("#points span:nth-child(2)");
 const levelArena = document.querySelector("#level span:nth-child(2)");
 const timeArena = document.querySelector("#time span:nth-child(2)");
 const counterArena = document.querySelector("#counter span:nth-child(2)");
+const volumeArena = document.getElementById("volume-up-arena");
 
 // Game win modal
 const levelWinModal = document.getElementById("game-level");
@@ -66,12 +68,26 @@ const noAgainButton = document.getElementById("play-again-no")
 closeButton.addEventListener("click", function () { startGame() });
 quit.addEventListener("click", function () { startGame() });
 noAgainButton.addEventListener("click", function () { startGame() });
-closeHighscores.addEventListener("click", function () { location.reload() });
+closeHighscores.addEventListener("click", function () { startGame() });
+//closeHighscores.addEventListener("click", function () { location.reload() });
 // Audio buttons
 quit.addEventListener("click", function () { click.play() });
 const clickButton = document.querySelectorAll(".click");
 clickButton.forEach(element => {
     element.addEventListener("click", function () { click.play() });
+});
+// Volume toggle
+const volumeOnIcon = document.querySelectorAll(".fa-volume-up");
+volumeMenu.addEventListener("click", function () {
+    volumeOnIcon.forEach(element => {
+        element.classList.toggle("fa-volume-up");
+        element.classList.toggle("fa-volume-mute");
+    })
+    click.muted = !click.muted;
+    wrong.muted = !wrong.muted;
+    match.muted = !match.muted;
+    finish.muted = !finish.muted;
+    over.muted = !over.muted;
 });
 
 // ----------------------- Audio
@@ -264,6 +280,7 @@ function scoreSystem() {
 // Play again when times up
 playAgainButton.addEventListener("click", function () { playAgain() });
 function playAgain() {
+    oneVisible = false;
     if (gameLevel === "easy") {
         level("easy");
     } else if (gameLevel === "medium") {
@@ -284,8 +301,8 @@ const getHighScoresHard = JSON.parse(localStorage.getItem("highScoresHard")) || 
 const printScoresHard = document.getElementById("print-scores-hard");
 clearButton.addEventListener("click", function () {
     if (gameLevel === "easy") {
-        printScoresEasy.style.display = "none"
-        localStorage.removeItem("highScoresEasy")
+        printScoresEasy.style.display = "none";
+        localStorage.removeItem("highScoresEasy");
     } else if (gameLevel === "medium") {
         printScoresMedium.style.display = "none"
         localStorage.removeItem("highScoresMedium")
@@ -293,10 +310,12 @@ clearButton.addEventListener("click", function () {
         printScoresHard.style.display = "none"
         localStorage.removeItem("highScoresHard")
     } else {
-        window.localStorage.clear()
-        printScoresEasy.style.display = "none"
-        printScoresMedium.style.display = "none"
-        printScoresHard.style.display = "none"
+        localStorage.removeItem("highScoresEasy");
+        localStorage.removeItem("highScoresMedium");
+        localStorage.removeItem("highScoresHard");
+        printScoresEasy.style.display = "none";
+        printScoresMedium.style.display = "none";
+        printScoresHard.style.display = "none";
     };
 });
 saveButton.addEventListener("click", function () {
@@ -308,18 +327,21 @@ saveButton.addEventListener("click", function () {
     if (gameLevel === "easy") {
         getHighScores = getHighScoresEasy
         printScores = printScoresEasy
+        easyTable.style.display = "block"
         mediumTable.style.display = "none"
         hardTable.style.display = "none"
     } else if (gameLevel === "medium") {
         getHighScores = getHighScoresMedium
         printScores = printScoresMedium
         easyTable.style.display = "none"
+        mediumTable.style.display = "block"
         hardTable.style.display = "none"
     } else if (gameLevel === "hard") {
         getHighScores = getHighScoresHard
         printScores = printScoresHard
         easyTable.style.display = "none"
         mediumTable.style.display = "none"
+        hardTable.style.display = "block"
     };
     getHighScores.push(score);
     getHighScores.sort((a, b) => b.score - a.score);
