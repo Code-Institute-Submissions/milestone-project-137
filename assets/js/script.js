@@ -150,7 +150,7 @@ function level(userChoice) {
     mainMenuSection.style.display = "none";
     gameArenaSection.style.display = "flex";
     turnCounter = 0;
-    time = 20;
+    time = 60;
     addPoints = 0;
     subtractPoints = 0;
     boardArena.innerHTML = cards;
@@ -305,13 +305,8 @@ function playAgain() {
 };
 
 // Save score to local storage
-let getHighScores;
-let printScores;
-const getHighScoresEasy = JSON.parse(localStorage.getItem("highScoresEasy")) || [];
 const printScoresEasy = document.getElementById("print-scores-easy");
-const getHighScoresMedium = JSON.parse(localStorage.getItem("highScoresMedium")) || [];
 const printScoresMedium = document.getElementById("print-scores-medium");
-const getHighScoresHard = JSON.parse(localStorage.getItem("highScoresHard")) || [];
 const printScoresHard = document.getElementById("print-scores-hard");
 clearButton.addEventListener("click", function () {
     if (gameLevel === "easy") {
@@ -337,7 +332,30 @@ highscoresButton.addEventListener("click", function () {
     easyTable.style.display = "block"
     mediumTable.style.display = "block"
     hardTable.style.display = "block"
-    printScores.style.display = "table-row-group"
+    printScoresEasy.innerHTML = (JSON.parse(localStorage.getItem("highScoresEasy")) || [])
+        .map(score => {
+            return `<tr>
+        <td>${score.name}</td>
+        <td>${score.score}</td>
+        <td>${score.turns}</td>
+        </tr>`;
+        }).join("");
+    printScoresMedium.innerHTML = (JSON.parse(localStorage.getItem("highScoresMedium")) || [])
+        .map(score => {
+            return `<tr>
+        <td>${score.name}</td>
+        <td>${score.score}</td>
+        <td>${score.turns}</td>
+        </tr>`;
+        }).join("");
+    printScoresHard.innerHTML = (JSON.parse(localStorage.getItem("highScoresHard")) || [])
+        .map(score => {
+            return `<tr>
+        <td>${score.name}</td>
+        <td>${score.score}</td>
+        <td>${score.turns}</td>
+        </tr>`;
+        }).join("");
 });
 saveButton.addEventListener("click", function () {
     const score = {
@@ -345,6 +363,11 @@ saveButton.addEventListener("click", function () {
         score: totalScore.innerHTML,
         turns: turnCounter,
     };
+    const getHighScoresEasy = JSON.parse(localStorage.getItem("highScoresEasy")) || [];
+    const getHighScoresMedium = JSON.parse(localStorage.getItem("highScoresMedium")) || [];
+    const getHighScoresHard = JSON.parse(localStorage.getItem("highScoresHard")) || [];
+    let getHighScores;
+    let printScores;
     if (gameLevel === "easy") {
         getHighScores = getHighScoresEasy
         printScores = printScoresEasy
@@ -382,7 +405,7 @@ saveButton.addEventListener("click", function () {
         </tr>`;
         }).join("");
 });
-printScoresEasy.innerHTML = getHighScoresEasy
+/*printScoresEasy.innerHTML = getHighScoresEasy
     .map(score => {
         return `<tr>
         <td>${score.name}</td>
@@ -406,3 +429,4 @@ printScoresHard.innerHTML = getHighScoresHard
         <td>${score.turns}</td>
         </tr>`;
     }).join("");
+*/
