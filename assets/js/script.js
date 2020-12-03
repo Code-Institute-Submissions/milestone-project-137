@@ -162,7 +162,9 @@ function level(userChoice) {
 };
 
 // Shuffle cards before each game
+let figShuffle;
 function shuffle() {
+    figShuffle = figures.slice();
     let cardNum = 14;
     if (gameLevel === "easy") {
         cardNum = 6;
@@ -171,11 +173,11 @@ function shuffle() {
     };
     for (i = cardNum; i > 0; i--) {
         j = Math.floor(Math.random() * (i + 1));
-        temp = figures[i];
-        figures[i] = figures[j];
-        figures[j] = temp;
+        temp = figShuffle[i];
+        figShuffle[i] = figShuffle[j];
+        figShuffle[j] = temp;
     };
-    return figures;
+    return figShuffle;
 };
 
 // Add figure on the other side of card
@@ -191,7 +193,7 @@ function reverse(no) {
     if (lock === false) {
         lock = true;
         let element = `c${no}`
-        let picture = `url(assets/images/${figures[no]})`
+        let picture = `url(assets/images/${figShuffle[no]})`
         document.getElementById(element).style.background = picture
         document.getElementById(element).style.backgroundSize = "cover";
         document.getElementById(element).classList.add("cardA");
@@ -201,7 +203,7 @@ function reverse(no) {
             firstCardNo = no;
             lock = false;
         } else {
-            if (figures[firstCardNo] === figures[no]) {
+            if (figShuffle[firstCardNo] === figShuffle[no]) {
                 match.volume = 1;
                 match.play();
                 keep2Cards();
@@ -264,6 +266,7 @@ function timer() {
     if (time < 10 && time > 0) {
         timeArena.innerHTML = "0" + time
     } else if (time === 0) {
+        oneVisible = false;
         over.play();
         $('#times-up-modal').modal('show');
         clearInterval(countDown);
@@ -292,7 +295,6 @@ function scoreSystem() {
 // Play again when times up
 playAgainButton.addEventListener("click", function () { playAgain() });
 function playAgain() {
-    oneVisible = false;
     if (gameLevel === "easy") {
         level("easy");
     } else if (gameLevel === "medium") {
