@@ -101,6 +101,7 @@ h1 li {
     height: 125px;
     margin: 10px;
     color: #ffffff;
+    cursor: pointer;
 }
 
 .level:hover {
