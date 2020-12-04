@@ -21,6 +21,7 @@ body {
 }
 
 /* ------------------- Main menu section ------------------- */
+
 #main-menu-section {
     background: url(../images/lego-bricks.jpg) center center no-repeat;
     height: 100vh;
@@ -145,7 +146,6 @@ h1 li {
     height: 100vh;
 }
 
-/* Game arena */
 #exit {
     position: absolute;
     top: -20px;
@@ -184,7 +184,14 @@ h1 li {
     font-weight: bold;
 }
 
+/* ------------------- Highscores modal ------------------- */
+
+.table td, .table th {
+    padding: 0;
+}
+
 /* ------------------- Cards (js) ------------------- */
+
 .card {
     width: 23%;
     height: 115px;
@@ -209,11 +216,6 @@ h1 li {
     cursor: default;
     pointer-events: none;
     display: inline-block;
-}
-
-/* ------------------- Highscores modal ------------------- */
-.table td, .table th {
-    padding: 0;
 }
 
 /* ------------------- Media Query ------------------- */
