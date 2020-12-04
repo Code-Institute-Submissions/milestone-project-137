@@ -76,6 +76,7 @@ const wrong = new Audio("assets/audio/wrong.mp3");
 const match = new Audio("assets/audio/match.mp3");
 const finish = new Audio("assets/audio/finish.mp3");
 const over = new Audio("assets/audio/over.mp3");
+const revers = new Audio("assets/audio/revers.mp3")
 // Volume on/off toggle
 const volumeOnIcon = document.querySelectorAll(".fa-volume-up");
 volumeMenu.addEventListener("click", function () {
@@ -88,6 +89,7 @@ volumeMenu.addEventListener("click", function () {
     match.muted = !match.muted;
     finish.muted = !finish.muted;
     over.muted = !over.muted;
+    revers.muted = !revers.muted;
 });
 volumeArena.addEventListener("click", function () {
     volumeOnIcon.forEach(element => {
@@ -99,6 +101,7 @@ volumeArena.addEventListener("click", function () {
     match.muted = !match.muted;
     finish.muted = !finish.muted;
     over.muted = !over.muted;
+    revers.muted = !revers.muted;
 });
 
 // ----------------------- Game start
@@ -194,6 +197,7 @@ function reverse(no) {
             oneVisible = true;
             firstCardNo = no;
             lock = false;
+            revers.play();
         } else {
             if (figShuffle[firstCardNo] === figShuffle[no]) {
                 match.volume = 1;
