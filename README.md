@@ -2,7 +2,7 @@
 
 ---
 
-<p id="top"></p>
+<p id="top"></p>
 
 ![Game logo](assets/readmeimages/emmet.png)
 
@@ -108,6 +108,39 @@ The main image in main menu section is Emmet which is well know character from L
 <p id="features"></p>
 
 ## 4️⃣ Features List 😲
+
+### Existing features:
+
+#### Main Menu:
+![Main Menu](assets/readmeimages/mainmenu.jpg)
+
+This is the first screen presented to the player. There are four main buttons:
+- Play - After pressing this button, difficulty level modal pop up. After choosing level the game will start.
+  	- Cancel button will dismiss modal.
+
+  ![Level modal](assets/readmeimages/levelmodal.jpg)
+
+- About - After pressing this button, about modal pop up. Player can check game rules, scoring system and benefits of playing memory games.
+  - Close button will dismiss modal.
+
+  ![About modal](assets/readmeimages/aboutmodal.jpg)
+
+- Highscores - After pressing this button, highscores modal pop up. Player can check scores for each difficulty level, they are sorted by points from high to low. Scores are stored in local storage and best 5 scores for level will be presented. Hover effect will highlight selected row.
+  - Clear scores button will clear local storage and delete rows with scores for each level.
+  - Close button will dismiss modal.
+
+  ![About modal](assets/readmeimages/highscoresmodal.jpg)
+
+- Credits - After pressing this button, credits modal pop up. Player can check who developed game and find contact information. There is also credits section with special thanks.
+  - Close button will dismiss modal.
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+- Volume - Pressing this button will toggle on/off audio in the application.
+
+  ![About modal](assets/readmeimages/volumeon.jpg) Audio ON &nbsp;&nbsp;&nbsp;
+  ![About modal](assets/readmeimages/volumeoff.jpg) Audio OFF
+
 
 <div align="center"><p style="text-align: center"><a href="#top">Back to top ⬆️</a></p></div>
 
