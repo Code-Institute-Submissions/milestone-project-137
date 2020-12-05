@@ -156,7 +156,6 @@ h1 li {
     cursor: pointer;
 }
 
-
 #volume-up-arena {
     cursor: pointer;
     position: absolute;
@@ -190,6 +189,9 @@ h1 li {
     padding: 0;
 }
 
+.select:hover {
+    color: #ffd500;
+}
 /* ------------------- Cards (js) ------------------- */
 
 .card {

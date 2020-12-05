@@ -358,7 +358,7 @@ highscoresButton.addEventListener("click", function() {
 	hardTable.style.display = "block";
 	printScoresEasy.innerHTML = (JSON.parse(localStorage.getItem("highScoresEasy")) || [])
 		.map(score => {
-			return `<tr>
+			return `<tr class="select">
         <td>${score.name}</td>
         <td>${score.score}</td>
         <td>${score.turns}</td>
@@ -366,7 +366,7 @@ highscoresButton.addEventListener("click", function() {
 		}).join("");
 	printScoresMedium.innerHTML = (JSON.parse(localStorage.getItem("highScoresMedium")) || [])
 		.map(score => {
-			return `<tr>
+			return `<tr class="select">
         <td>${score.name}</td>
         <td>${score.score}</td>
         <td>${score.turns}</td>
@@ -374,7 +374,7 @@ highscoresButton.addEventListener("click", function() {
 		}).join("");
 	printScoresHard.innerHTML = (JSON.parse(localStorage.getItem("highScoresHard")) || [])
 		.map(score => {
-			return `<tr>
+			return `<tr class="select">
         <td>${score.name}</td>
         <td>${score.score}</td>
         <td>${score.turns}</td>
@@ -422,7 +422,7 @@ saveButton.addEventListener("click", function() {
 	$('#game-win-modal').modal('hide');
 	printScores.innerHTML = getHighScores
 		.map(score => {
-			return `<tr>
+			return `<tr class="select">
         <td>${score.name}</td>
         <td>${score.score}</td>
         <td>${score.turns}</td>
