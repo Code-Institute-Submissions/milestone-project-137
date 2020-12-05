@@ -136,11 +136,52 @@ This is the first screen presented to the player. There are four main buttons:
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-- Volume - Pressing this button will toggle on/off audio in the application.
+- Volume icon - Pressing this icon will toggle on/off audio in the application.
 
   ![About modal](assets/readmeimages/volumeon.jpg) Audio ON &nbsp;&nbsp;&nbsp;
   ![About modal](assets/readmeimages/volumeoff.jpg) Audio OFF
 
+### Game Arena:
+![About modal](assets/readmeimages/gamearena.jpg)
+
+Cards are displayed in the middle of the game arena. The number of cards depends on level (easy: 8, medium: 12, hard: 16). When player clicks on a card, the card turns and the picture side of the card is presented. When two cards match they will stay on the screen, if don't they will reverse back. The main features are:
+
+- Points - They are increase every time player match 2 cards and decrease when doesn't match.
+
+- Level - There are three levels: easy, medium, hard. Display depends on level.
+
+- Time - There is 60 sec to complete the level. Timer counts down when the game starts.
+
+- Turn counter - Increases by 1 every time player reveal 2 cards.
+
+- Quit - After pressing this button player will be redirected to main menu. From the he can start new game again.
+
+- Volume icon - Pressing this icon will toggle on/off audio in the application.
+
+### End of the game:
+Lose:
+- Times up - Times up modal will pop up when timer reach 0. Adequate audio will play. Player will have option to play level again or quit.
+  - Yes button will reset level again.
+  - No button will redirect to main menu.
+
+  ![About modal](assets/readmeimages/timesup.jpg)
+
+Win:
+- Game win - Game win modal will pop up when player match all pairs before times up. Adequate audio will play. This modal contain total score for played game. In input field player can put his name.
+  - Save button will save score and optionally name in local storage. If score is within best 5 scores it will be displayed in level highscores modal.
+  - Close button will redirect to main menu without saving.
+
+  ![About modal](assets/readmeimages/gamewin.jpg)
+
+- Level highscores - This modal will pop up when player click save button in game win modal. It shows best scores only for current level. Hover effect will highlight selected row.
+  - Clear scores button will clear local storage and delete rows with scores only for current level.
+  - Close button will redirect to main menu.
+
+  ![About modal](assets/readmeimages/levelhigh.jpg)
+
+### Future features:
+- Live Play - I'd like to add functionality to allow users to interact and compete with friends or other players with features like a real-time scoreboard and the option to send invites and challenges to other players.
+- Variation of Themes - The current theme of the site is geared more towards children than adults, so I'd like create multiple themes so that users can select a theme when they first arrive on the site and their preference would be saved for the next time they visit.
 
 <div align="center"><p style="text-align: center"><a href="#top">Back to top ⬆️</a></p></div>
 
