@@ -13,11 +13,15 @@ body {
 }
 
 .fa-volume-up {
-    color: #43b02a;;
+    color: #43b02a;
 }
 
 .fa-volume-mute {
     color: #e3000b;
+}
+
+a {
+    color: #ffd500;
 }
 
 /* ------------------- Main menu section ------------------- */
