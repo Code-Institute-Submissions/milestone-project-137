@@ -16,8 +16,20 @@ The purpose of the game is to improve memory skills. Players can race against th
 
 - <a href="#project">Project Construction 👷</a>
 - <a href="#ux">User Experience Design 🧠</a>
+  - <a href="#us">User Stories</a>
+  - <a href="#us">Design</a>
 - <a href="#tech">Technologies Used 🔨</a>
+  - <a href="#lang">Languages</a>
+  - <a href="#flp">Frameworks, Libraries & Programs</a>
 - <a href="#features">Features List 😲</a>
+  - <a href="#existing">Existing Features</a>
+  - <a href="#future">Future Features</a>
+- <a href="#testing">Testing 🔥</a>
+- <a href="#deployment">Deployment 🚀</a>
+- <a href="#credits">Credits 🙏</a>
+  - <a href="#code">Code</a>
+  - <a href="#media">Media</a>
+  - <a href="#ack">Acknowledgments</a>
 
 
 <p id="project"></p>
@@ -31,6 +43,8 @@ This project uses HTML5, CSS3 and Vanilla JavaScript to make the individual feat
 <p id="ux"></p>
 
 ## 2️⃣ User Experience Design 🧠
+
+<p id="us"></p>
 
 ### User stories:
 #### Player:
@@ -53,6 +67,8 @@ This project uses HTML5, CSS3 and Vanilla JavaScript to make the individual feat
 2. As a developer, I want to create fully responsive app to showcase my skills to a potential employer.
 - Application is fully responsive thanks to bootstrap framework and mobile first design approach.
 3. As a developer, I wanted to create a game as gaming has been my primary hobby since being a child.
+
+<p id="design"></p>
 
 ### Design:
 #### Colour Scheme:
@@ -86,11 +102,15 @@ The main image in main menu section is Emmet which is well know character from L
 
 ## 3️⃣ Technologies Used 🔨
 
+<p id="lang"></p>
+
 ### Languages Used:
 
 - <a href="https://en.wikipedia.org/wiki/HTML" rel="noopener" target="_blank">HTML</a> - Standard mark-up language for documents designed to be displayed in a web browser.
 - <a href="https://en.wikipedia.org/wiki/CSS" rel="noopener" target="_blank">CSS</a> - Describes how HTML elements are to be displayed on screen, paper, or in other media.
 - <a href="https://en.wikipedia.org/wiki/JavaScript" rel="noopener" target="_blank">JavaScript</a> - Is a programming language that conforms to the ECMAScript specification.
+
+<p id="flp"></p>
 
 ### Frameworks, Libraries & Programs Used:
 
@@ -108,6 +128,8 @@ The main image in main menu section is Emmet which is well know character from L
 <p id="features"></p>
 
 ## 4️⃣ Features List 😲
+
+<p id="existing"></p>
 
 ### Existing features:
 
@@ -141,7 +163,7 @@ This is the first screen presented to the player. There are four main buttons:
   ![About modal](assets/readmeimages/volumeon.jpg) Audio ON &nbsp;&nbsp;&nbsp;
   ![About modal](assets/readmeimages/volumeoff.jpg) Audio OFF
 
-### Game Arena:
+#### Game Arena:
 ![About modal](assets/readmeimages/gamearena.jpg)
 
 Cards are displayed in the middle of the game arena. The number of cards depends on level (easy: 8, medium: 12, hard: 16). When player clicks on a card, the card turns and the picture side of the card is presented. When two cards match they will stay on the screen, if don't they will reverse back. The main features are:
@@ -158,7 +180,7 @@ Cards are displayed in the middle of the game arena. The number of cards depends
 
 - Volume icon - Pressing this icon will toggle on/off audio in the application.
 
-### End of the game:
+#### End of the game:
 Lose:
 - Times up - Times up modal will pop up when timer reach 0. Adequate audio will play. Player will have option to play level again or quit.
   - Yes button will reset level again.
@@ -178,6 +200,8 @@ Win:
   - Close button will redirect to main menu.
 
   ![About modal](assets/readmeimages/levelhigh.jpg)
+
+  <p id="future"></p>
 
 ### Future features:
 - Live Play - I'd like to add functionality to allow users to interact and compete with friends or other players with features like a real-time scoreboard and the option to send invites and challenges to other players.
@@ -209,7 +233,7 @@ In order to deploy the website to GitHub pages, I:
 
   👉 Your site is published at https://zokam1411.github.io/milestone-project-1/
 
-### To run this project locally:
+### Run this project locally:
 
 - Select the Repository from the GitHub Dashboard.
 
@@ -221,7 +245,7 @@ In order to deploy the website to GitHub pages, I:
 
 - Open folder and open index.html in web browser.
 
-### To clone this project:
+### Clone this project:
 
 - Select the Repository from the GitHub Dashboard.
 
@@ -238,5 +262,39 @@ In order to deploy the website to GitHub pages, I:
 - Type 'git clone', and then paste the URL you copied earlier.
 
 - Press Enter to create your local clone.
+
+<div align="center"><p style="text-align: center"><a href="#top">Back to top ⬆️</a></p></div>
+
+<p id="credits"></p>
+
+## 7️⃣ Credits 🙏
+
+<p id="code"></p>
+
+### Code:
+
+- <a href="https://getbootstrap.com/">Bootstrap</a> library mainly to make site responsive and implement simple style for margins, padding and elements alignment.
+- <a href="https://www.w3schools.com/">w3schools</a> referenced for code:
+  - The Fisher Yates Method to sort an array.
+  - How to use local storage.
+
+<p id="media"></p>
+
+### Media:
+
+- Emmet image in main menu: <a href="https://www.ifixit.com/">favpng</a> (Licence free)
+- Cards figures images: <a href="https://www.cleanpng.com/">cleanPNG</a> (Licence free)
+- Icons: <a href="https://fontawesome.com/">Font Awesome</a>
+- Audio: <a href="https://www.zapsplat.com/">Zapslat</a> (licence free)
+
+<p id="ack"></p>
+
+### Acknowledgments:
+
+- <a href="https://codeinstitute.net" rel="noopener" target="_blank">Code Institute</a>
+- <a href="https://stackoverflow.com/" rel="noopener" target="_blank">Stack Overflow</a>
+- Code Institute Slack Comminity.
+- My mentor Guido Cecilio for guidance and support.
+- My family and friends for their patience and honest critique throughout.
 
 <div align="center"><p style="text-align: center"><a href="#top">Back to top ⬆️</a></p></div>
