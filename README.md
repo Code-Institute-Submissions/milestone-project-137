@@ -156,7 +156,7 @@ This is the first screen presented to the player. There are four main buttons:
 - Credits - After pressing this button, credits modal pop up. Player can check who developed game and find contact information. There is also credits section with special thanks.
   - Close button will dismiss modal.
 
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  ![About modal](assets/readmeimages/credits.jpg)
 
 - Volume icon - Pressing this icon will toggle on/off audio in the application.
 
