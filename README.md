@@ -274,7 +274,7 @@ In order to deploy the website to GitHub pages, I:
 ### Code:
 
 - <a href="https://getbootstrap.com/">Bootstrap</a> library mainly to make site responsive and implement simple style for margins, padding and elements alignment.
-- <a href="https://www.w3schools.com/">w3schools</a> referenced for code:
+- <a href="https://www.w3schools.com/">W3 Sschools</a> referenced for code:
   - The Fisher Yates Method to sort an array.
   - How to use local storage.
 
@@ -282,7 +282,7 @@ In order to deploy the website to GitHub pages, I:
 
 ### Media:
 
-- Emmet image in main menu: <a href="https://www.ifixit.com/">favpng</a> (Licence free)
+- Emmet image in main menu: <a href="https://favpng.com/">favpng</a> (Licence free)
 - Cards figures images: <a href="https://www.cleanpng.com/">cleanPNG</a> (Licence free)
 - Icons: <a href="https://fontawesome.com/">Font Awesome</a>
 - Audio: <a href="https://www.zapsplat.com/">Zapslat</a> (licence free)
@@ -293,7 +293,7 @@ In order to deploy the website to GitHub pages, I:
 
 - <a href="https://codeinstitute.net" rel="noopener" target="_blank">Code Institute</a>
 - <a href="https://stackoverflow.com/" rel="noopener" target="_blank">Stack Overflow</a>
-- Code Institute Slack Comminity.
+- Code Institute Slack Community.
 - My mentor Guido Cecilio for guidance and support.
 - My family and friends for their patience and honest critique throughout.
 
