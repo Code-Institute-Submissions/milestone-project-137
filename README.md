@@ -213,6 +213,24 @@ Win:
 
 ## 5️⃣ Testing 🔥
 
+### Manual testing:
+
+Only manual testing method was used to test this project due to big gap of knowledge on how to use automatic testing tools like Jasmine or Enzyme yet. All functions were tested by myself by creating different scenarios.
+
+Testing and improving the application was carried out throughout its development. The main testing tool was Google Chrome dev tools and devices such as a phone, tablet and laptop with several versions of browsers (Google Chrome, Firefox, Edge, Opera).
+
+Passing the HTML file content through the W3C Validator for HTML resulted in no errors but one warning "Section lacks heading" which was game arena section but this is intentional so I ignored. The Bootstrap framework was tested extensively to ensure that the Mobile first Responsive Approach was achieved with this project. The Application was tested on my Lenovo Thinkbook laptop and large Samsung TV screen, Samsung Galaxy S6 mobile and Lenovo tablet. The application worked fine on all devices. If something didn't work as it should during the test it was immediately checked and corrected in DevTools and then implemented into the code and checked again. If test passed it was committed and pushed into repository. 
+
+I used JSHint to validate JavaScript file configured to accept jQuery & ES6 features like const and let variables. There was no major warnings but this test allowed me to see where I had missing semi-colons from block of code and detect unused variables.
+
+The project contains as much vanilla JavaScript as possible to allow the developer to understand the language appropriately. jQuery was used in total of four times to target the modal elements to show/hide.
+
+CSS file content was regularly checked in the W3C Validator for CSS to ensure any errors were spotted throughout the development of the style sheet. As with the HTML validation if any errors were present they were checked in DevTools and then copy and pasted over to the code before committing and pushing the updated code to my GitHub Repository.
+
+Major errors while developing the application:
+
+ - 
+
 <div align="center"><p style="text-align: center"><a href="#top">Back to top ⬆️</a></p></div>
 
 <p id="deployment"></p>
