@@ -286,9 +286,9 @@ function scoreSystem() {
         mistakesWinModal.innerHTML = -20 * subtractPoints;
         timeBonusWinModal.innerHTML = time;
         if (gameLevel === "medium") {
-            timeBonusWinModal.innerHTML = `${time * 2} (added time bonus: x2)`;
+            timeBonusWinModal.innerHTML = time * 2
         } else if (gameLevel === "hard") {
-            timeBonusWinModal.innerHTML = `${time * 3} (added time bonus: x3)`;
+            timeBonusWinModal.innerHTML = time * 3
         }
         totalScore.innerHTML = 50 * addPoints - 20 * subtractPoints + parseInt(timeBonusWinModal.innerHTML);
     }
