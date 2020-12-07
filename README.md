@@ -25,6 +25,8 @@ The purpose of the game is to improve memory skills. Players can race against th
   - <a href="#existing">Existing Features</a>
   - <a href="#future">Future Features</a>
 - <a href="#testing">Testing 🔥</a>
+  - <a href="#manualtesting">Manual Testing</a>
+  - <a href="#ustesting">User Stories</a>
 - <a href="#deployment">Deployment 🚀</a>
 - <a href="#credits">Credits 🙏</a>
   - <a href="#code">Code</a>
@@ -226,7 +228,9 @@ Win:
 
 ## 5️⃣ Testing 🔥
 
-### Manual testing:
+<p id="manualtesting"></p>
+
+### Manual Testing:
 
 Only manual testing method was used to test this project due to big gap of knowledge on how to use automatic testing tools like Jasmine or Enzyme yet. All functions were tested by myself by creating different scenarios.
 
@@ -240,11 +244,9 @@ The project contains as much vanilla JavaScript as possible to allow the develop
 
 CSS file content was regularly checked in the W3C Validator for CSS to ensure any errors were spotted throughout the development of the style sheet. As with the HTML validation if any errors were present they were checked in DevTools and then copy and pasted over to the code before committing and pushing the updated code to my GitHub Repository.
 
-Major errors while developing the application:
+<p id="ustesting"></p>
 
- - 
-
- ### User stories:
+ ### User Stories:
 
  Here are the steps and results from the testing carried based on the project user stories to determine that the game and functionality are fit for purpose:
  1. As a player, I want to play a game that involves using my memory so that I can improve my memory skills.
