@@ -47,7 +47,9 @@ This project uses HTML5, CSS3 and Vanilla JavaScript to make the individual feat
 <p id="us"></p>
 
 ### User stories:
+
 #### Player:
+
 1. As a player, I want to play a game that involves using my memory so that I can improve my memory skills.
 - The main purpose of the game is to improve memory skills, player can play the game in the play section.
 2. As a player, I want to know how playing memory games can improve memory skills.
@@ -62,6 +64,7 @@ This project uses HTML5, CSS3 and Vanilla JavaScript to make the individual feat
 - Game has a Lego theme so the kids will love to play. It also has difficulty levels so will suit all ages.
 
 #### Developer:
+
 1. As a developer, I want to create memory game using JavaScript.
 - JavaScript is the main language that was used to create the game.
 2. As a developer, I want to create fully responsive app to showcase my skills to a potential employer.
@@ -71,7 +74,9 @@ This project uses HTML5, CSS3 and Vanilla JavaScript to make the individual feat
 <p id="design"></p>
 
 ### Design:
+
 #### Colour Scheme:
+
 4 primary colours are used which are the main Lego colours:
 - ![#ffd500 sample](assets/readmeimages/yellow.png) #ffd500 used as a background for main menu section.
 - ![#008adb sample](assets/readmeimages/blue.png) #008adb used as a background for modals and buttons in main menu section.
@@ -81,18 +86,22 @@ This project uses HTML5, CSS3 and Vanilla JavaScript to make the individual feat
 All colours were used to style various elements in application.
 
 #### Typography:
+
 The "Goldman" font is the main font used throughout the whole website with Sans Serif as the fall back font in case the font isn't imported into the site correctly.
 The "Roboto Mono" font is the font used in main arena section to prevent "jumping" text while numbers are changing.
 
 Both fonts are attractive and appropriate.
 
 #### Content Structure:
+
 The main game geometry of the game is square, it refers in this way to Lego bricks. The game base on two sections and modals. All modals are square and have blue backgrounds. It is very easy solution to make sure all will be good visible on mobile devices.
 
 #### Images:
+
 The main image in main menu section is Emmet which is well know character from Lego movie. It will focus attention around younger and also older players.
 
 #### Wireframes:
+
 - <a href="assets/readmeimages/desktop-wireframes.pdf" target="_blank">Desktop wireframes</a>
 - <a href="assets/readmeimages/mobile-wireframes.pdf" target="_blank">Mobile wireframes</a>
 
@@ -134,6 +143,7 @@ The main image in main menu section is Emmet which is well know character from L
 ### Existing features:
 
 #### Main Menu:
+
 ![Main Menu](assets/readmeimages/mainmenu.jpg)
 
 This is the first screen presented to the player. There are four main buttons:
@@ -164,6 +174,7 @@ This is the first screen presented to the player. There are four main buttons:
   ![About modal](assets/readmeimages/volumeoff.jpg) Audio OFF
 
 #### Game Arena:
+
 ![About modal](assets/readmeimages/gamearena.jpg)
 
 Cards are displayed in the middle of the game arena. The number of cards depends on level (easy: 8, medium: 12, hard: 16). When player clicks on a card, the card turns and the picture side of the card is presented. When two cards match they will stay on the screen, if don't they will reverse back. The main features are:
@@ -181,6 +192,7 @@ Cards are displayed in the middle of the game arena. The number of cards depends
 - Volume icon - Pressing this icon will toggle on/off audio in the application.
 
 #### End of the game:
+
 Lose:
 - Times up - Times up modal will pop up when timer reach 0. Adequate audio will play. Player will have option to play level again or quit.
   - Yes button will reset level again.
@@ -204,6 +216,7 @@ Win:
   <p id="future"></p>
 
 ### Future features:
+
 - Live Play - I'd like to add functionality to allow users to interact and compete with friends or other players with features like a real-time scoreboard and the option to send invites and challenges to other players.
 - Variation of Themes - The current theme of the site is geared more towards children than adults, so I'd like create multiple themes so that users can select a theme when they first arrive on the site and their preference would be saved for the next time they visit.
 
@@ -230,6 +243,37 @@ CSS file content was regularly checked in the W3C Validator for CSS to ensure an
 Major errors while developing the application:
 
  - 
+
+ ### User stories:
+
+ Here are the steps and results from the testing carried based on the project user stories to determine that the game and functionality are fit for purpose:
+ 1. As a player, I want to play a game that involves using my memory so that I can improve my memory skills.
+ - Open <a href="https://zokam1411.github.io/milestone-project-2/">Emmet's memory game.</a>
+ - Click "Play".
+ - Choose difficulty level.
+ - Click or Tap on cards to find matches.
+ - When the countdown timer has reached 0, the game over screen will display. Click "Yes" to play again.
+ - When all cards have been matched, the game feedback screen is displayed. Save your score and play again.
+
+ Result: Game works as expected. There is a problem with "match" audio when two pairs reversed in short amount of time, there is no audio confirmation for second pair. This is more obvious on mobile where it is easier to tap many cards quickly.
+
+ 2. As a player, I want to know how playing memory games can improve memory skills.
+ - Open <a href="https://zokam1411.github.io/milestone-project-2/">Emmet's memory game.</a>
+ - Click on the "About" button in main menu.
+ - The about modal will pop up.
+ - The about modal contains some information about memory games and how they improving memory skills.
+
+Result: This is working as it should. There's no interaction with the text section itself but the navigation is working correctly.
+
+3. As a player, I want a mobile friendly game to play whilst on the go via my mobile phone/tablet.
+- On mobile or tablet open <a href="https://zokam1411.github.io/milestone-project-2/">Emmet's memory game.</a>
+- Click "Play".
+- Choose difficulty level.
+- Click or Tap on cards to find matches.
+- When the countdown timer has reached 0, the game over screen will display. Click "Yes" to play again.
+- When all cards have been matched, the game feedback screen is displayed. Save your score and play again.
+
+Result: Game works as it should. Application is made to be fully responsive via Bootstrap mobile first approach.
 
 <div align="center"><p style="text-align: center"><a href="#top">Back to top ⬆️</a></p></div>
 
