@@ -60,7 +60,6 @@ const playerNameInput = document.getElementById("playerName");
 const saveButton = document.getElementById("save-score");
 const closeButton = document.getElementById("close-win");
 // Times up modal
-const timesUpModal = document.getElementById("times-up-modal");
 const playAgainButton = document.getElementById("play-again");
 const noAgainButton = document.getElementById("play-again-no");
 
