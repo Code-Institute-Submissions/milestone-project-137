@@ -4,7 +4,7 @@
 
 <p id="top"></p>
 
-![Game logo](assets/readmeimages/emmet.png)
+![Game logo](assets/readmeimages/emmet.jpg)
 
 ## Lego Memory Game
 
