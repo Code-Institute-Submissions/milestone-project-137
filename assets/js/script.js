@@ -112,7 +112,6 @@ function startGame() {
     mainMenuSection.style.display = "flex";
     gameArenaSection.style.display = "none";
 }
-window.onload = startGame;
 
 // Create cards in game arena according to the selected level
 // Hide main menu section and show game arena section
@@ -431,3 +430,5 @@ saveButton.addEventListener("click", function () {
         })
         .join("");
 });
+
+window.onload = startGame;
