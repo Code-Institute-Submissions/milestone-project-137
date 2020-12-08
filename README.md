@@ -250,7 +250,7 @@ CSS file content was regularly checked in the W3C Validator for CSS to ensure an
 
  Here are the steps and results from the testing carried based on the project user stories to determine that the game and functionality are fit for purpose:
  1. As a player, I want to play a game that involves using my memory so that I can improve my memory skills.
- - Open <a href="https://zokam1411.github.io/milestone-project-2/">Emmet's memory game.</a>
+ - Open <a href="https://zokam1411.github.io/milestone-project-2/">Lego memory game.</a>
  - Click "Play".
  - Choose difficulty level.
  - Click or Tap on cards to find matches.
@@ -260,7 +260,7 @@ CSS file content was regularly checked in the W3C Validator for CSS to ensure an
  Result: Game works as expected. There is a problem with "match" audio when two pairs reversed in short amount of time, there is no audio confirmation for second pair. This is more obvious on mobile where it is easier to tap many cards quickly.
 
  2. As a player, I want to know how playing memory games can improve memory skills.
- - Open <a href="https://zokam1411.github.io/milestone-project-2/">Emmet's memory game.</a>
+ - Open <a href="https://zokam1411.github.io/milestone-project-2/">Lego memory game.</a>
  - Click on the "About" button in main menu.
  - The about modal will pop up.
  - The about modal contains some information about memory games and how they improving memory skills.
@@ -268,7 +268,7 @@ CSS file content was regularly checked in the W3C Validator for CSS to ensure an
 Result: This is working as it should. There's no interaction with the text section itself but the navigation is working correctly.
 
 3. As a player, I want a mobile friendly game to play whilst on the go via my mobile phone/tablet.
-- On mobile or tablet open <a href="https://zokam1411.github.io/milestone-project-2/">Emmet's memory game.</a>
+- On mobile or tablet open <a href="https://zokam1411.github.io/milestone-project-2/">Lego memory game.</a>
 - Click "Play".
 - Choose difficulty level.
 - Click or Tap on cards to find matches.
@@ -276,6 +276,46 @@ Result: This is working as it should. There's no interaction with the text secti
 - When all cards have been matched, the game feedback screen is displayed. Save your score and play again.
 
 Result: Game works as it should. Application is made to be fully responsive via Bootstrap mobile first approach.
+
+4. As a player, I want a game that is intuitive and easy to use so that I can learn how to use it quickly.
+- Open <a href="https://zokam1411.github.io/milestone-project-2/">Lego memory game.</a>
+ - Click "Play".
+ - Choose difficulty level.
+ - Click or Tap on cards to find matches.
+ - When the countdown timer has reached 0, the game over screen will display. Click "Yes" to play again.
+ - When all cards have been matched, the game feedback screen is displayed. Save your score and play again.
+    - Think: Is the game experience smooth or are some features difficult to use?
+    - Think: Is it clear how the game works?
+    - Think: Are the game features and interactions consistent in style and design?
+
+Result: Game works as it should. Game play is smooth and very intuitive. All styles are consistent.
+
+5. As a player, I want to see my score so that I can see if I am making progress.
+- Open <a href="https://zokam1411.github.io/milestone-project-2/">Lego memory game.</a>
+ - Click "Play".
+ - Choose difficulty level.
+ - Click or Tap on cards to find matches.
+ - When the countdown timer has reached 0, the game over screen will display. Click "Yes" to play again.
+ - When all cards have been matched, the game feedback screen is displayed with option to save the score.
+ - If the score is within best 5 scores it will be saved in adequate table.
+
+    Or
+  
+  - Open <a href="https://zokam1411.github.io/milestone-project-2/">Lego memory game.</a>
+  - Click "Highscores" button.
+  - Best 5 scores for each level will be displayed.
+
+Result: Game works as it should. All scores are grouped in correct level tables.
+
+6. As a player, I want a fun game that will attract my kids to play and help with their memory skills.
+- Open <a href="https://zokam1411.github.io/milestone-project-2/">Lego memory game.</a>
+ - Click "Play".
+ - Choose difficulty level.
+ - Click or Tap on cards to find matches.
+ - When the countdown timer has reached 0, the game over screen will display. Click "Yes" to play again.
+ - When all cards have been matched, the game feedback screen is displayed. Save your score and play again.
+
+Result: Game works as it should. Lego images will attract kids in all ages. Colour scheme is appropriate and focus attention as well.
 
 <div align="center"><p style="text-align: center"><a href="#top">Back to top ⬆️</a></p></div>
 
