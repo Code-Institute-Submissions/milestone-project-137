@@ -27,6 +27,7 @@ The purpose of the game is to improve memory skills. Players can race against th
 - <a href="#testing">Testing 🔥</a>
   - <a href="#manualtesting">Manual Testing</a>
   - <a href="#ustesting">User Stories</a>
+  - <a href="#bugs">Bugs</a>
 - <a href="#deployment">Deployment 🚀</a>
 - <a href="#credits">Credits 🙏</a>
   - <a href="#code">Code</a>
@@ -320,6 +321,11 @@ Result: Game works as it should. All scores are grouped in correct level tables.
  - When all cards have been matched, the game feedback screen is displayed. Save your score and play again.
 
 Result: Game works as it should. Lego images will attract kids in all ages. Colour scheme is appropriate and focus attention as well.
+
+<p id="bugs"></p>
+
+Bugs:
+- Sometimes button click sound is delayed.
 
 <div align="center"><p style="text-align: center"><a href="#top">Back to top ⬆️</a></p></div>
 
