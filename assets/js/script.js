@@ -45,6 +45,10 @@ const closeButton = document.getElementById("close-win");
 // Times up modal
 const playAgainButton = document.getElementById("play-again");
 const noAgainButton = document.getElementById("play-again-no");
+// Clear confirmation modal
+const clearYes = document.getElementById("clear-yes");
+const clearNO = document.getElementById("clear-no");
+const clearLevel = document.getElementById("level-to-clear");
 
 // ----------------------- Buttons
 // Back to main menu buttons
@@ -315,6 +319,15 @@ const printScoresEasy = document.getElementById("print-scores-easy");
 const printScoresMedium = document.getElementById("print-scores-medium");
 const printScoresHard = document.getElementById("print-scores-hard");
 clearButton.addEventListener("click", function () {
+    $("#clear-modal").modal("show");
+    $("#highscores-modal").modal("hide");
+    clearLevel.innerHTML = gameLevel;
+    if (gameLevel === null) {
+        clearLevel.innerHTML = "all";
+    }
+});
+clearYes.addEventListener("click", function () {
+    $("#highscores-modal").modal("show");
     if (gameLevel === "easy") {
         printScoresEasy.style.display = "none";
         localStorage.removeItem("highScoresEasy");
@@ -332,6 +345,9 @@ clearButton.addEventListener("click", function () {
         printScoresMedium.style.display = "none";
         printScoresHard.style.display = "none";
     }
+});
+clearNO.addEventListener("click", function () {
+    $("#highscores-modal").modal("show");
 });
 highscoresButton.addEventListener("click", function () {
     gameLevel = null;
