@@ -160,10 +160,14 @@ This is the first screen presented to the player. There are four main buttons:
   ![About modal](assets/readmeimages/aboutmodal.jpg)
 
 - Highscores - After pressing this button, highscores modal pop up. Player can check scores for each difficulty level, they are sorted by points from high to low. Scores are stored in local storage and best 5 scores for level will be presented. Hover effect will highlight selected row.
-  - Clear scores button will clear local storage and delete rows with scores for each level.
+  - Clear scores button will trigger confirmation modal.
+  
+  "Yes" will clear local storage and delete rows with scores for each level when "No" will close confirmation modal.
+  
   - Close button will dismiss modal.
 
   ![About modal](assets/readmeimages/highscoresmodal.jpg)
+  ![About modal](assets/readmeimages/confirm.jpg)
 
 - Credits - After pressing this button, credits modal pop up. Player can check who developed game and find contact information. There is also credits section with special thanks.
   - Close button will dismiss modal.
